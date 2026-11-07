@@ -1,10 +1,41 @@
-# COMP9417 26T3 Project Kit
+# COMP9417 26T3 · NSW 日前预测
 
-Everything you need for the project, apart from the specification on Moodle.
+`baseline` 分支保存小组的三轮消融实验。任务是预测 NSW 次日 48 个半小时的需求（MW），并判断各档电价是否高于前一市场日的 NSW 均价。四种算法用相同的 2010–2013 年训练样本、2014 年验证日期，以及昨日和上周同档基线进行比较。
+
+## 阅读实验结果
+
+| 入口 | 用途 |
+| --- | --- |
+| [原版交互消融矩阵（HTML）](ablation/outputs/2014-ablation-matrices/消融矩阵.html) | 克隆仓库后用浏览器打开这个文件，可以筛选模型、点选单元格查看对照及置信区间，并查看 340 个配置 × 53 个字段的开关矩阵。 |
+| [消融说明与四个模型的训练交接](ablation/消融说明.md) | 按回归组、分类组给出四份有序输入清单、训练参数和独立复现代码。字段字典逐列说明 41 个派生特征的公式、用途和入选模型。 |
+| [完整 Excel 矩阵](ablation/outputs/2014-ablation-matrices/消融实验矩阵.xlsx) · [维度热图](ablation/outputs/2014-ablation-matrices/维度消融热图.png) | Excel 支持筛选完整结果；热图展示 20 个维度 × 3 种对照方式 × 4 个模型的指标差。 |
+| [2014 验证结果摘要](ablation/RESULTS.md) · [全部配置与配对结果](ablation/results/) | 340 个配置、368 个配对对照、两套区间，另保存每个模型的逐档预测。 |
+
+| 任务 | 模型与字段数 | 2014 年主指标 |
+| --- | --- | ---: |
+| 需求回归 | Ridge，25 列 | MAPE 3.309% |
+| 需求回归 | **梯度提升回归，29 列** | **MAPE 2.436%** |
+| 价格方向分类 | 逻辑回归，22 列 | 平衡准确率 75.793% |
+| 价格方向分类 | **梯度提升分类，18 列** | **平衡准确率 79.300%** |
+
+粗体为按预设规则入选的模型。2014 年用于选型；2015–2026 年冻结回放属于下一阶段。
+
+## 复现实验
+
+1. 在仓库根目录按下方说明创建 Python 3.11 环境并安装 `requirements.txt`。
+2. 从课程发布的套件取得 `nem_weather_halfhourly_2010_2026.csv`。将它放在本地 `data/` 目录，或在 `--data` 后填写已有文件的路径。
+3. 从仓库根目录运行以下命令；各轮的特征、指标和输出路径见[消融运行说明](ablation/README.md)。
+
+```shell
+python -m ablation.run --data "data/nem_weather_halfhourly_2010_2026.csv"
+```
+
+## Official project kit
 
 | Item | What it is |
 | --- | --- |
-| `data/nem_weather_halfhourly_2010_2026.csv` | The fixed dataset (see `data/README.md`) |
+| [`specs/project_spec.pdf`](specs/project_spec.pdf) | The project specification |
+| `data/nem_weather_halfhourly_2010_2026.csv` | Local path for the fixed dataset supplied by the course |
 | `starter_notebook.ipynb` | Loads the data, builds a day-ahead table, computes both baselines |
 | `template/model.py` | A blank `Forecaster` to start your model package |
 | `example_package/` | A complete working package (a 7-day moving average): `model.py`, `train.py`, `artifacts/` |
@@ -12,8 +43,7 @@ Everything you need for the project, apart from the specification on Moodle.
 | `harness/` | Code used by `check_submission.py` and in marking |
 | `requirements.txt` | The exact library versions used in marking |
 
-All commands below are run in a terminal (macOS/Linux) or in Command Prompt or PowerShell
-(Windows), from inside the `comp9417_project_kit` folder.
+Run the following commands from the repository root in a terminal (macOS/Linux), Command Prompt or PowerShell (Windows).
 
 ## 1. Create a new environment (required)
 

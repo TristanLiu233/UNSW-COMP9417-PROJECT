@@ -1,0 +1,2 @@
+# Store the published offline HTML byte-for-byte, including its line endings.
+ablation/outputs/2014-ablation-matrices/*.html -text whitespace=trailing-space,space-before-tab,cr-at-eol
