@@ -1,0 +1,80 @@
+{
+  "data_filename": "nem_weather_halfhourly_2010_2026.csv",
+  "csv_prefix_sha256": "8243fff94d730db8c221cd21b9d59413c40dfe4cd6621c50e0b35233aca84a4b",
+  "last_interval_end": "2015-01-01 00:00:00",
+  "warmup_days": 28,
+  "train_first_day": "2010-01-29",
+  "train_last_day": "2013-12-31",
+  "train_days": 1433,
+  "train_rows": 68784,
+  "validation_first_day": "2014-01-01",
+  "validation_last_day": "2014-12-31",
+  "validation_days": 365,
+  "validation_rows": 17520,
+  "study": "comp9417-three-round-ablation",
+  "model_seed": 17,
+  "bootstrap_seed": 17,
+  "bootstrap_repetitions": 2000,
+  "bootstrap_blocks_days": [
+    1,
+    7
+  ],
+  "primary_metrics": {
+    "demand": "MAPE",
+    "price": "BalAcc"
+  },
+  "classification_thresholds": [
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6
+  ],
+  "tuning_validation_folds": [
+    [
+      "2013-01-01",
+      "2013-06-30"
+    ],
+    [
+      "2013-07-01",
+      "2013-12-31"
+    ]
+  ],
+  "candidate_grids": {
+    "ridge": [
+      1,
+      100,
+      10000
+    ],
+    "boost_demand": [
+      7,
+      15,
+      31
+    ],
+    "logistic": [
+      0.01,
+      0.1,
+      1
+    ],
+    "boost_price": [
+      7,
+      15,
+      31
+    ]
+  },
+  "jobs": 3,
+  "threads_per_worker": 1,
+  "worker_seconds": {
+    "ridge": 10.2,
+    "logistic": 17.0,
+    "boost_demand": 119.7,
+    "boost_price": 146.4
+  },
+  "versions": {
+    "python": "3.11.13",
+    "numpy": "2.4.6",
+    "pandas": "3.1.0",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.1"
+  }
+}

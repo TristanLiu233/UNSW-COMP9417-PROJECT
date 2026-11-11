@@ -1,0 +1,5 @@
+__pycache__/
+ablation/.ablation-*/
+baseline/.baseline-training-*/
+baseline/.*.publishing
+baseline/outputs.backup-*/
