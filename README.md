@@ -148,3 +148,24 @@ on the zip itself before uploading it.
   means no live-evaluation marks).
 
 Weather data: Open-Meteo (https://open-meteo.com), CC BY 4.0. Market data: AEMO.
+
+## 小组模型与共享特征 v1
+
+项目预测 NSW 次日 48 个半小时的需求和电价方向。需求回归使用 Ridge 和梯度提升回归，电价方向分类使用逻辑回归和梯度提升分类。[四个模型的字段与训练说明](ablation/消融说明.md) · [交互消融矩阵](ablation/outputs/2014-ablation-matrices/消融矩阵.html)
+
+### 训练、回测与单日预测
+
+在仓库根目录的课程 Python 3.11 环境中运行。将 `--data` 后的路径替换为本机课程 CSV 的位置。
+
+```shell
+python -m baseline.train --data "data/nem_weather_halfhourly_2010_2026.csv"
+python -m baseline.replay --data "data/nem_weather_halfhourly_2010_2026.csv"
+```
+
+训练命令保存两版权重。验证版用截至 2013 年底的数据拟合，在 2014 年验证。冻结版用截至 2014 年底的数据重新拟合，随后固定权重，回测 2015 年 1 月至 2026 年 10 月。[模型权重与 2014 验证分数](baseline/outputs/) · [逐月、逐年及全期回测](baseline/replay_results/metrics.csv)
+
+`build_features(df)` 为训练和回测生成批量特征。`build_features_for_day(history, weather_next)` 返回单日 48 行特征。两者以相同顺序输出 36 列，每个模型按自己的有序字段清单取列。单日调用时，传入与批量数据同一起点、截至目标日 00:00 的完整市场历史，以及随后 48 档天气。原 35 个字段与旧版逐位一致，第 36 列为 NSW 公共假期标记。后续修改接口、列序或计算公式时，通过 PR 提交并运行一致性测试。[共享模块](src/common/features.py) · [单日预测](baseline/predict.py) · [一致性测试](tests/test_common_features.py)
+
+### NSW 公共假期消融
+
+需求提升树增加假期列后，2014 年 MAPE 从 2.4355% 降至 2.3318%，长期冻结 MAPE 从 4.4230% 降至 4.3452%。Ridge 的长期冻结 MAPE 从 5.0100% 升至 5.0398%。仓库中的基线权重使用原配方，假期实验结果单独保存。[实验结果、分组比较与复现命令](baseline/holiday_results/README.md)
