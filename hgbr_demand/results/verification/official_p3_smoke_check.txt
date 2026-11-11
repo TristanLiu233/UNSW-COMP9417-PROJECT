@@ -1,0 +1,28 @@
+P3 demand smoke test; price uses yesterday baseline placeholder.
+Do not submit this test ZIP. Last 14 days are in-sample for final demand training.
+Package found at <temporary-check-directory>/pkg
+
+2026-10-18  ok    init   0.1s  predict   0.2s
+2026-10-19  ok    init   0.0s  predict   0.1s
+2026-10-20  ok    init   0.0s  predict   0.1s
+2026-10-21  ok    init   0.0s  predict   0.1s
+2026-10-22  ok    init   0.0s  predict   0.1s
+2026-10-23  ok    init   0.0s  predict   0.1s
+2026-10-24  ok    init   0.0s  predict   0.1s
+2026-10-25  ok    init   0.0s  predict   0.1s
+2026-10-26  ok    init   0.0s  predict   0.1s
+2026-10-27  ok    init   0.0s  predict   0.1s
+2026-10-28  ok    init   0.0s  predict   0.1s
+2026-10-29  ok    init   0.0s  predict   0.1s
+2026-10-30  ok    init   0.0s  predict   0.1s
+2026-10-31  ok    init   0.1s  predict   0.1s
+
+Scores:
+(in-sample if your models were trained on these days: they check that the package
+ runs, not how it will perform in the live week)
+                              MAPE %   MAE MW  BalAcc %   Acc %
+Your package                    2.81    167.4      78.0    78.1
+Same half-hour yesterday        7.12    415.3      78.0    78.1
+Same half-hour last week        9.95    556.2      73.2    73.5
+
+All days ran successfully.

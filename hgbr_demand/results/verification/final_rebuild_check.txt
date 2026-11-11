@@ -1,0 +1,4 @@
+PASS: rebuild reproduces all 293760 available feature-row predictions.
+Saved model SHA-256: 91959a9c477f0c4dcb160fab3c0c4ccd47766d59610320a8ff9b3032de0120f5
+Rebuilt model SHA-256: da88469f22000efdfa0558f1521484285a3023290d7b4ecce627be289d0288f9
+Byte-identical serialization: False

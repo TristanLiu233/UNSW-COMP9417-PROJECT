@@ -1,0 +1,14 @@
+{
+  "reference": "2010-01-29 through 2013-12-31, grouped by calendar month",
+  "calibration": "95th percentile of 2014 trailing 28-market-day scores",
+  "statistic": "trailing mean of RMS standardized distances in six daily predictors",
+  "variables": [
+    "yesterday_load_mean",
+    "yesterday_load_shape",
+    "yesterday_price_slog",
+    "vic_yesterday_load_mean",
+    "sydney_temp_mean",
+    "sydney_solar_mean"
+  ],
+  "threshold": 1.2239688684472358
+}

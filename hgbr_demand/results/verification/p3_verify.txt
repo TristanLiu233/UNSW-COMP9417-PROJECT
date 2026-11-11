@@ -1,0 +1,2 @@
+PASS: official scores, 72 fits, 142 months, 207456 replay slots and 18 official-interface/leakage probes
+PASS: at most six updates per strategy, every fit stops before its first prediction day

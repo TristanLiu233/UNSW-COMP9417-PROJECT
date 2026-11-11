@@ -1,0 +1,17 @@
+strategy,reason,alarm_day,first_prediction_day,train_first_day,train_last_day
+periodic_expanding,scheduled,,2017-01-01,2010-01-29,2016-12-31
+periodic_expanding,scheduled,,2019-01-01,2010-01-29,2018-12-31
+periodic_expanding,scheduled,,2021-01-01,2010-01-29,2020-12-31
+periodic_expanding,scheduled,,2023-01-01,2010-01-29,2022-12-31
+periodic_expanding,scheduled,,2025-01-01,2010-01-29,2024-12-31
+periodic_recent4y,scheduled,,2017-01-01,2013-01-01,2016-12-31
+periodic_recent4y,scheduled,,2019-01-01,2015-01-01,2018-12-31
+periodic_recent4y,scheduled,,2021-01-01,2017-01-01,2020-12-31
+periodic_recent4y,scheduled,,2023-01-01,2019-01-01,2022-12-31
+periodic_recent4y,scheduled,,2025-01-01,2021-01-01,2024-12-31
+cusum_expanding,cusum,2016-06-26,2016-06-27,2010-01-29,2016-06-26
+cusum_expanding,cusum,2018-01-07,2018-01-08,2010-01-29,2018-01-07
+cusum_expanding,cusum,2019-01-29,2019-01-30,2010-01-29,2019-01-29
+cusum_expanding,cusum,2020-02-08,2020-02-09,2010-01-29,2020-02-08
+cusum_expanding,cusum,2021-04-13,2021-04-14,2010-01-29,2021-04-13
+cusum_expanding,cusum,2022-09-16,2022-09-17,2010-01-29,2022-09-16

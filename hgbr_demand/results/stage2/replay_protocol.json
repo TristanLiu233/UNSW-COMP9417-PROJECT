@@ -1,0 +1,27 @@
+{
+  "candidate": {
+    "target": "residual_b1",
+    "params": {
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.2,
+      "max_iter": 300
+    },
+    "seed": 0
+  },
+  "initial_fit_through": "2014-12-31",
+  "replay_slots": 207456,
+  "periodic_dates": [
+    "2017-01-01",
+    "2019-01-01",
+    "2021-01-01",
+    "2023-01-01",
+    "2025-01-01"
+  ],
+  "retrain_budget_per_strategy": 6,
+  "cusum_min_days_between_refits": 365,
+  "window_years": 4,
+  "monthly_bootstrap_replicates": 2000,
+  "selection_period": "2015-01-01 through 2024-12-31",
+  "alarm_context": "descriptive 30-day windows around alerts, excluding the alert day",
+  "ridge_monthly_comparison": "P2 branch published aggregation, aligned by month and n_slots; not rerun"
+}

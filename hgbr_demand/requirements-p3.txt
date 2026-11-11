@@ -1,0 +1,11 @@
+# Python 3.11; exact course versions for libraries used by P3.
+numpy==2.4.6
+pandas==3.1.0
+scipy==1.17.1
+scikit-learn==1.9.1
+joblib==1.6.0
+holidays==0.107
+pyarrow==26.0.0
+# Local plotting and thread configuration, not grading settings:
+matplotlib==3.11.2
+threadpoolctl==3.8.0
