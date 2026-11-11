@@ -7,7 +7,7 @@ import pandas as pd
 
 
 OUTPUTS = Path(__file__).resolve().parent / "outputs"
-COMPARISON = OUTPUTS / "comparison"
+COMPARISON = OUTPUTS / "comparison_alpha1"
 
 MODELS = {
     "base": "Base Ridge",
