@@ -1,0 +1,11 @@
+{
+  "recipe": "log_gaps25",
+  "n_features": 25,
+  "C": 1.0,
+  "class_weight": "balanced",
+  "threshold": 0.49,
+  "fold1_BalAcc": 79.44845592448786,
+  "fold2_BalAcc": 76.69631417867741,
+  "BalAcc": 78.03163674979649,
+  "Accuracy": 77.89383561643835
+}

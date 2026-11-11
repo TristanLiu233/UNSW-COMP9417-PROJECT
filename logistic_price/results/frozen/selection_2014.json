@@ -1,0 +1,10 @@
+{
+  "model": "log_interactions31",
+  "recipe": "log_interactions31",
+  "n_features": 31,
+  "C": 1.0,
+  "class_weight": null,
+  "threshold": 0.42,
+  "BalAcc": 79.12494730176907,
+  "Accuracy": 79.01826484018265
+}

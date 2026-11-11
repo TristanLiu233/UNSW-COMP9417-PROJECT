@@ -1,0 +1,46 @@
+P4 final local checks, 2026-11-11
+
+PASS: 17 yearly class-share rows, P4 shared row/candidate config, one real 336-slot age-37-to-43 window.
+
+PASS: yearly class counts; exact 37-43-day window; future NaN/extreme input isolation.
+
+Official example check (NOT group package):
+Package found at <workspace>/work/kit_check/example_package
+
+2026-10-18  ok    init   0.0s  predict   0.0s
+2026-10-19  ok    init   0.0s  predict   0.0s
+2026-10-20  ok    init   0.0s  predict   0.0s
+2026-10-21  ok    init   0.0s  predict   0.0s
+2026-10-22  ok    init   0.0s  predict   0.0s
+2026-10-23  ok    init   0.0s  predict   0.0s
+2026-10-24  ok    init   0.0s  predict   0.0s
+2026-10-25  ok    init   0.0s  predict   0.0s
+2026-10-26  ok    init   0.0s  predict   0.0s
+2026-10-27  ok    init   0.0s  predict   0.0s
+2026-10-28  ok    init   0.0s  predict   0.0s
+2026-10-29  ok    init   0.0s  predict   0.0s
+2026-10-30  ok    init   0.0s  predict   0.0s
+2026-10-31  ok    init   0.0s  predict   0.0s
+
+Scores:
+(in-sample if your models were trained on these days: they check that the package
+ runs, not how it will perform in the live week)
+                              MAPE %   MAE MW  BalAcc %   Acc %
+Your package                    8.29    470.5      79.1    79.5
+Same half-hour yesterday        7.12    415.3      78.0    78.1
+Same half-hour last week        9.95    556.2      73.2    73.5
+
+All days ran successfully.
+
+Starter notebook unchanged code cells:
+(295104, 18) 2010-01-01 00:30:00 to 2026-11-01 00:00:00
+PASS code cell 1
+PASS code cell 3
+starter_notebook.ipynb:cell_5:11: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+PASS code cell 5
+PASS code cell 7
+PASS code cell 9
+starter_notebook.ipynb:cell_11:15: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+Validation (2014) MAPE: 4.08%
+PASS code cell 11
+PASS all six original notebook code cells, unchanged source, shared execution namespace.

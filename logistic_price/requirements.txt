@@ -1,0 +1,11 @@
+# Python 3.11; course-pinned core dependencies used by P4.
+numpy==2.4.6
+pandas==3.1.0
+scipy==1.17.1
+scikit-learn==1.9.1
+joblib==1.6.0
+threadpoolctl==3.8.0
+matplotlib==3.11.2
+
+# Official example checker reads/writes Parquet.
+pyarrow==26.0.0

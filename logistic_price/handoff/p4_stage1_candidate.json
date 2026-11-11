@@ -1,0 +1,19 @@
+{
+  "status": "P4_candidate_only_not_group_frozen_configuration",
+  "model": {
+    "model": "log_interactions31",
+    "recipe": "log_interactions31",
+    "n_features": 31,
+    "C": 1.0,
+    "class_weight": null,
+    "threshold": 0.42,
+    "BalAcc": 79.12494730176907,
+    "Accuracy": 79.01826484018265
+  },
+  "feature_v1_alignment": "pending_P1_confirmation",
+  "group_feature_change_approval": "not_verified",
+  "training_cutoff": "2014-12-31",
+  "random_state": 17,
+  "artifact_dir": "logistic_price/results/frozen/artifacts/log_interactions31",
+  "note": "For P1 to merge after interface review. Does not replace group results/stage1_config.json."
+}

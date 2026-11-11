@@ -1,0 +1,2 @@
+owner,model,recipe,n_features,C,class_weight,threshold,BalAcc,Accuracy,feature_v1_alignment,train_end,validation_year
+P4,log_interactions31,log_interactions31,31.0,1.0,,0.42,79.12494730176907,79.01826484018265,pending_P1_confirmation,2013-12-31,2014
