@@ -1,0 +1,8 @@
+scheme,error,truncate,k,h,arl0_median,arl0_q05,arl0_q95,share_reps_no_alarm,mean_alarms_per_3650d,meets_target,selected,written_at
+main,logloss,True,0.75,3,110.60606060606061,86.904761904761898,152.08333333333334,0,32.970999999999997,False,False,2026-11-11 23:52:12
+main,logloss,True,0.75,4,173.8095238095238,125.86206896551724,260.71428571428572,0,20.925000000000001,False,False,2026-11-11 23:52:12
+main,logloss,True,0.75,5,inf,3650,inf,0.78000000000000003,0.252,True,True,2026-11-11 23:52:12
+main,logloss,True,0.75,6,inf,inf,inf,1,0,True,False,2026-11-11 23:52:12
+main,logloss,True,0.75,7,inf,inf,inf,1,0,True,False,2026-11-11 23:52:12
+main,logloss,True,0.75,8,inf,inf,inf,1,0,True,False,2026-11-11 23:52:12
+main,logloss,True,0.75,10,inf,inf,inf,1,0,True,False,2026-11-11 23:52:12

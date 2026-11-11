@@ -1,0 +1,3 @@
+$ pytest tests/price_hgbc -q   (default run, no -m)
+Wed Nov 11 21:23:58 AEDT 2026
+90/210 tests collected (120 deselected) in 1.22s

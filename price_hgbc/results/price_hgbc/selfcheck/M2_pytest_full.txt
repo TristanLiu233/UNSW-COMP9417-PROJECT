@@ -1,0 +1,213 @@
+$ pytest tests/price_hgbc -q -m "not historical_repro"   (re-run after fix round 1: gzip mtime)
+Wed Nov 11 20:10:09 AEDT 2026
+........................................................................ [ 37%]
+..................................................ss.................... [ 75%]
+................................................                         [100%]
+==================================== PASSES ====================================
+______________________ test_starter_notebook_runs_in_venv ______________________
+----------------------------- Captured stderr call -----------------------------
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+============================= slowest 10 durations =============================
+125.90s call     tests/price_hgbc/test_m1_diag.py::test_full_replay_matches_recorded_evidence
+31.91s call     tests/price_hgbc/test_m2.py::test_fresh_process_rerun_reproduces_all_m2_outputs
+28.04s call     tests/price_hgbc/test_m1_diag.py::test_hgb_invariant_to_row_order_and_1ulp_gradients
+15.31s call     tests/price_hgbc/test_m2.py::test_resume_equals_one_shot
+9.24s call     tests/price_hgbc/test_m1_diag.py::test_fresh_processes_and_thread_counts_identical
+8.51s call     tests/price_hgbc/test_m1.py::test_two_fresh_processes_bitwise_identical_and_equal_recorded
+6.65s call     tests/price_hgbc/test_m0.py::test_check_submission_rerun_live
+5.53s call     tests/price_hgbc/test_m2.py::test_2014_not_used_in_selection
+4.88s call     tests/price_hgbc/test_m2.py::test_best_config_rerun_identical
+3.87s call     tests/price_hgbc/test_m0.py::test_starter_notebook_runs_in_venv
+=========================== short test summary info ============================
+PASSED tests/price_hgbc/test_m0.py::test_python_is_311
+PASSED tests/price_hgbc/test_m0.py::test_requirements_parsed
+PASSED tests/price_hgbc/test_m0.py::test_package_version_pinned[numpy-2.4.6]
+PASSED tests/price_hgbc/test_m0.py::test_package_version_pinned[pandas-3.1.0]
+PASSED tests/price_hgbc/test_m0.py::test_package_version_pinned[scipy-1.17.1]
+PASSED tests/price_hgbc/test_m0.py::test_package_version_pinned[scikit-learn-1.9.1]
+PASSED tests/price_hgbc/test_m0.py::test_package_version_pinned[xgboost-3.2.0]
+PASSED tests/price_hgbc/test_m0.py::test_package_version_pinned[lightgbm-4.7.0]
+PASSED tests/price_hgbc/test_m0.py::test_package_version_pinned[statsmodels-0.15.0]
+PASSED tests/price_hgbc/test_m0.py::test_package_version_pinned[pyarrow-26.0.0]
+PASSED tests/price_hgbc/test_m0.py::test_package_version_pinned[joblib-1.6.0]
+PASSED tests/price_hgbc/test_m0.py::test_package_version_pinned[holidays-0.107]
+PASSED tests/price_hgbc/test_m0.py::test_m0_check_exit_codes_zero
+PASSED tests/price_hgbc/test_m0.py::test_m0_check_14_ok_0_fail
+PASSED tests/price_hgbc/test_m0.py::test_m0_check_kit_untouched
+PASSED tests/price_hgbc/test_m0.py::test_baseline_balacc_2014[b1-73.99]
+PASSED tests/price_hgbc/test_m0.py::test_baseline_balacc_2014[b7-74.28]
+PASSED tests/price_hgbc/test_m0.py::test_baseline_matches_sklearn[b1]
+PASSED tests/price_hgbc/test_m0.py::test_baseline_matches_sklearn[b7]
+PASSED tests/price_hgbc/test_m0.py::test_baseline_covers_all_2014
+PASSED tests/price_hgbc/test_m0.py::test_day_matches_dayahead
+PASSED tests/price_hgbc/test_m0.py::test_each_complete_day_has_48_unique_periods
+PASSED tests/price_hgbc/test_m0.py::test_period_consistent_with_offset
+PASSED tests/price_hgbc/test_m0.py::test_midnight_row_belongs_to_previous_day
+PASSED tests/price_hgbc/test_m0.py::test_no_incomplete_days
+PASSED tests/price_hgbc/test_m0.py::test_index_sorted_unique
+PASSED tests/price_hgbc/test_m0.py::test_year_splits_chronological_and_disjoint
+PASSED tests/price_hgbc/test_m0.py::test_starter_notebook_runs_in_venv
+PASSED tests/price_hgbc/test_m0.py::test_check_submission_rerun_live
+PASSED tests/price_hgbc/test_m1.py::test_m1_columns_and_order
+PASSED tests/price_hgbc/test_m1.py::test_group_recipe_untouched
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[permute-day0]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[permute-day1]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[permute-day2]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[permute-day3]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[permute-day4]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[permute-day5]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[permute-day6]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[permute-day7]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[permute-day8]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[random-day0]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[random-day1]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[random-day2]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[random-day3]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[random-day4]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[random-day5]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[random-day6]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[random-day7]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_next_day_price_demand_do_not_change_features[random-day8]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_all_next_day_market_columns[day0]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_all_next_day_market_columns[day1]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_all_next_day_market_columns[day2]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_all_next_day_market_columns[day3]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_all_next_day_market_columns[day4]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_all_next_day_market_columns[day5]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_all_next_day_market_columns[day6]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_all_next_day_market_columns[day7]
+PASSED tests/price_hgbc/test_m1.py::test_leakage_all_next_day_market_columns[day8]
+PASSED tests/price_hgbc/test_m1.py::test_prediction_path_equals_bulk_features
+PASSED tests/price_hgbc/test_m1.py::test_up_lag1_consistent_with_price_above_prev_mean
+PASSED tests/price_hgbc/test_m1.py::test_up_lags_equal_official_baselines[day0]
+PASSED tests/price_hgbc/test_m1.py::test_up_lags_equal_official_baselines[day1]
+PASSED tests/price_hgbc/test_m1.py::test_up_lags_equal_official_baselines[day2]
+PASSED tests/price_hgbc/test_m1.py::test_up_lags_equal_official_baselines[day3]
+PASSED tests/price_hgbc/test_m1.py::test_up_lags_equal_official_baselines[day4]
+PASSED tests/price_hgbc/test_m1.py::test_up_lags_equal_official_baselines[day5]
+PASSED tests/price_hgbc/test_m1.py::test_up_lags_equal_official_baselines[day6]
+PASSED tests/price_hgbc/test_m1.py::test_up_lags_equal_official_baselines[day7]
+PASSED tests/price_hgbc/test_m1.py::test_up_lags_equal_official_baselines[day8]
+PASSED tests/price_hgbc/test_m1.py::test_labels_match_da_targets_on_5_random_days
+PASSED tests/price_hgbc/test_m1.py::test_calendar_and_weather_columns
+PASSED tests/price_hgbc/test_m1.py::test_categorical_features_only_expected
+PASSED tests/price_hgbc/test_m1.py::test_no_nan_inf_and_dropped_days_recorded
+PASSED tests/price_hgbc/test_m1.py::test_tau_grid_has_41_points
+PASSED tests/price_hgbc/test_m1.py::test_evaluate_matches_official_and_sklearn
+PASSED tests/price_hgbc/test_m1.py::test_evaluate_on_2014_baseline_equals_m0
+PASSED tests/price_hgbc/test_m1.py::test_tau_05_equals_direct_threshold_prediction
+PASSED tests/price_hgbc/test_m1.py::test_tune_tau_finds_040_on_constructed_data
+PASSED tests/price_hgbc/test_m1.py::test_tie_rule_closest_to_half_then_smaller
+PASSED tests/price_hgbc/test_m1.py::test_endpoint_flag
+PASSED tests/price_hgbc/test_m1.py::test_splits_are_chronological
+PASSED tests/price_hgbc/test_m1.py::test_selection_stages_cannot_see_2014
+PASSED tests/price_hgbc/test_m1.py::test_m1_outputs_saved_and_consistent
+PASSED tests/price_hgbc/test_m1.py::test_fixed_model_config
+PASSED tests/price_hgbc/test_m1.py::test_in_process_rerun_bitwise_identical
+PASSED tests/price_hgbc/test_m1.py::test_two_fresh_processes_bitwise_identical_and_equal_recorded
+PASSED tests/price_hgbc/test_m1.py::test_historical_evidence_kept
+PASSED tests/price_hgbc/test_m1.py::test_m1_predictions_are_not_the_historical_ones
+PASSED tests/price_hgbc/test_m1_diag.py::test_saved_group_results_unchanged
+PASSED tests/price_hgbc/test_m1_diag.py::test_kit_matches_git_head
+PASSED tests/price_hgbc/test_m1_diag.py::test_data_prefix_matches_run_json
+PASSED tests/price_hgbc/test_m1_diag.py::test_our_features_bitwise_equal_group_features
+PASSED tests/price_hgbc/test_m1_diag.py::test_group_saved_2014_truth_and_baseline_equal_ours
+PASSED tests/price_hgbc/test_m1_diag.py::test_no_exact_price_ties_2010_2014
+PASSED tests/price_hgbc/test_m1_diag.py::test_model_params_match_group_spec
+PASSED tests/price_hgbc/test_m1_diag.py::test_random_state_has_no_effect
+PASSED tests/price_hgbc/test_m1_diag.py::test_fresh_processes_and_thread_counts_identical
+PASSED tests/price_hgbc/test_m1_diag.py::test_fingerprint_compare_detects_tree_divergence
+PASSED tests/price_hgbc/test_m1_diag.py::test_linear_tuned_c_reproduces_exactly[logistic]
+PASSED tests/price_hgbc/test_m1_diag.py::test_linear_tuned_c_reproduces_exactly[ridge]
+PASSED tests/price_hgbc/test_m1_diag.py::test_full_replay_matches_recorded_evidence
+PASSED tests/price_hgbc/test_m1_diag.py::test_hgb_invariant_to_row_order_and_1ulp_gradients
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[1-macos-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[1-linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[1-linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[2-macos-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[2-linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[2-linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_environment_is_what_it_claims[macos-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_environment_is_what_it_claims[linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_environment_is_what_it_claims[linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_container_installed_exactly_the_pins[linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_container_installed_exactly_the_pins[linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_hgb_params_identical_across_envs
+PASSED tests/price_hgbc/test_m1_xplat.py::test_two_repetitions_bitwise_identical[macos-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_two_repetitions_bitwise_identical[linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_two_repetitions_bitwise_identical[linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_random_state_0_equals_17[macos-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_random_state_0_equals_17[linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_random_state_0_equals_17[linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_macos_matches_earlier_evidence
+PASSED tests/price_hgbc/test_m1_xplat.py::test_comparison_table_consistent_with_runs
+PASSED tests/price_hgbc/test_m1_xplat.py::test_data_and_labels_identical_across_all_envs
+PASSED tests/price_hgbc/test_m1_xplat.py::test_linux_arm64_and_amd64_bit_identical
+PASSED tests/price_hgbc/test_m1_xplat.py::test_prediction_labels_identical_across_all_envs
+PASSED tests/price_hgbc/test_m1_xplat.py::test_no_env_reproduces_historical_tuned_c
+PASSED tests/price_hgbc/test_m1_xplat.py::test_docker_state_restored
+PASSED tests/price_hgbc/test_m2.py::test_m1_formal_artefacts_unchanged
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_price-day0]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_price-day1]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_price-day2]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_price-day3]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_price-day4]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_price-day5]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_price-day6]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_price-day7]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_demand-day0]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_demand-day1]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_demand-day2]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_demand-day3]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_demand-day4]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_demand-day5]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_demand-day6]
+PASSED tests/price_hgbc/test_m2.py::test_leakage_shuffle_next_day_price_or_demand[nsw_demand-day7]
+PASSED tests/price_hgbc/test_m2.py::test_up_lag1_official_and_extended_matches_m1[day0]
+PASSED tests/price_hgbc/test_m2.py::test_up_lag1_official_and_extended_matches_m1[day1]
+PASSED tests/price_hgbc/test_m2.py::test_up_lag1_official_and_extended_matches_m1[day2]
+PASSED tests/price_hgbc/test_m2.py::test_up_lag1_official_and_extended_matches_m1[day3]
+PASSED tests/price_hgbc/test_m2.py::test_up_lag1_official_and_extended_matches_m1[day4]
+PASSED tests/price_hgbc/test_m2.py::test_up_lag1_official_and_extended_matches_m1[day5]
+PASSED tests/price_hgbc/test_m2.py::test_up_lag1_official_and_extended_matches_m1[day6]
+PASSED tests/price_hgbc/test_m2.py::test_up_lag1_official_and_extended_matches_m1[day7]
+PASSED tests/price_hgbc/test_m2.py::test_up_lag1_zero_mismatch_all_rows
+PASSED tests/price_hgbc/test_m2.py::test_extra_columns_use_day_D_and_D_plus_1[day0]
+PASSED tests/price_hgbc/test_m2.py::test_extra_columns_use_day_D_and_D_plus_1[day1]
+PASSED tests/price_hgbc/test_m2.py::test_extra_columns_use_day_D_and_D_plus_1[day2]
+PASSED tests/price_hgbc/test_m2.py::test_extra_columns_use_day_D_and_D_plus_1[day3]
+PASSED tests/price_hgbc/test_m2.py::test_extra_columns_use_day_D_and_D_plus_1[day4]
+PASSED tests/price_hgbc/test_m2.py::test_extra_columns_use_day_D_and_D_plus_1[day5]
+PASSED tests/price_hgbc/test_m2.py::test_extra_columns_use_day_D_and_D_plus_1[day6]
+PASSED tests/price_hgbc/test_m2.py::test_extra_columns_use_day_D_and_D_plus_1[day7]
+PASSED tests/price_hgbc/test_m2.py::test_spike_ratio_finite_and_floor_rule
+PASSED tests/price_hgbc/test_m2.py::test_count_and_share_ranges
+PASSED tests/price_hgbc/test_m2.py::test_holidays_around_australia_day_2014_and_observed_days
+PASSED tests/price_hgbc/test_m2.py::test_no_unexpected_nan_inf
+PASSED tests/price_hgbc/test_m2.py::test_column_order_and_determinism
+PASSED tests/price_hgbc/test_m2.py::test_bulk_equals_day_by_day
+PASSED tests/price_hgbc/test_m2.py::test_reuses_p1_definitions
+PASSED tests/price_hgbc/test_m2.py::test_feature_groups_file
+PASSED tests/price_hgbc/test_m2.py::test_2a_decision_follows_rule
+PASSED tests/price_hgbc/test_m2.py::test_2a_m1_arm_equals_grid_m1_ref
+PASSED tests/price_hgbc/test_m2.py::test_grid_has_48_unique_configs_plus_reference
+PASSED tests/price_hgbc/test_m2.py::test_grid_params_fixed_and_match_definition
+PASSED tests/price_hgbc/test_m2.py::test_each_config_has_41_tau_points
+PASSED tests/price_hgbc/test_m2.py::test_fold_dates_chronological
+PASSED tests/price_hgbc/test_m2.py::test_2014_not_used_in_selection
+PASSED tests/price_hgbc/test_m2.py::test_random_state_unused_for_m1_ref
+PASSED tests/price_hgbc/test_m2.py::test_tau_endpoint_flag_matches_tau
+PASSED tests/price_hgbc/test_m2.py::test_resume_equals_one_shot
+PASSED tests/price_hgbc/test_m2.py::test_best_config_rerun_identical
+PASSED tests/price_hgbc/test_m2.py::test_rank_rule_on_constructed_grid
+PASSED tests/price_hgbc/test_m2.py::test_selection_reproduces_from_grid
+PASSED tests/price_hgbc/test_m2.py::test_decision_uses_only_2013
+PASSED tests/price_hgbc/test_m2.py::test_bootstrap_balacc_equals_official_on_resamples
+PASSED tests/price_hgbc/test_m2.py::test_bootstrap_deterministic_and_paired
+PASSED tests/price_hgbc/test_m2.py::test_2014_confirmation_numbers
+PASSED tests/price_hgbc/test_m2.py::test_all_outputs_readable_and_linked
+PASSED tests/price_hgbc/test_m2.py::test_fresh_process_rerun_reproduces_all_m2_outputs
+PASSED tests/price_hgbc/test_markers.py::test_historical_repro_marker_selects_only_authorised_tests
+PASSED tests/price_hgbc/test_markers.py::test_routine_runs_exclude_only_authorised_tests
+SKIPPED [2] tests/price_hgbc/test_m1_xplat.py:98: opt-in: needs Docker Desktop running; set RUN_DOCKER_XPLAT=1
+190 passed, 2 skipped, 3 deselected, 72 warnings in 320.02s (0:05:20)

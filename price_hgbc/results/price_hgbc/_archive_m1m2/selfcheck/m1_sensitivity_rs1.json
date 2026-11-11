@@ -1,0 +1,226 @@
+{
+ "model": "HistGradientBoostingClassifier",
+ "params": {
+  "loss": "log_loss",
+  "learning_rate": 0.1,
+  "max_iter": 100,
+  "max_leaf_nodes": 31,
+  "max_depth": null,
+  "min_samples_leaf": 20,
+  "l2_regularization": 0.0,
+  "max_features": 1.0,
+  "max_bins": 255,
+  "categorical_features": [
+   "period",
+   "weekday"
+  ],
+  "monotonic_cst": null,
+  "interaction_cst": null,
+  "warm_start": false,
+  "early_stopping": false,
+  "scoring": "loss",
+  "validation_fraction": 0.1,
+  "n_iter_no_change": 10,
+  "tol": 1e-07,
+  "verbose": 0,
+  "random_state": 1,
+  "class_weight": null
+ },
+ "fitted_params": {
+  "categorical_features": [
+   "period",
+   "weekday"
+  ],
+  "class_weight": null,
+  "early_stopping": false,
+  "interaction_cst": null,
+  "l2_regularization": 0.0,
+  "learning_rate": 0.1,
+  "loss": "log_loss",
+  "max_bins": 255,
+  "max_depth": null,
+  "max_features": 1.0,
+  "max_iter": 100,
+  "max_leaf_nodes": 31,
+  "min_samples_leaf": 20,
+  "monotonic_cst": null,
+  "n_iter_no_change": 10,
+  "random_state": 1,
+  "scoring": "loss",
+  "tol": 1e-07,
+  "validation_fraction": 0.1,
+  "verbose": 0,
+  "warm_start": false
+ },
+ "features": [
+  "up_lag1",
+  "up_lag7",
+  "syd_temp",
+  "syd_rh",
+  "syd_cloud",
+  "syd_solar",
+  "mel_temp",
+  "mel_rh",
+  "mel_cloud",
+  "mel_solar",
+  "bne_temp",
+  "bne_rh",
+  "bne_cloud",
+  "bne_solar",
+  "period",
+  "weekday",
+  "price_gap_lag1",
+  "price_gap_lag7"
+ ],
+ "categorical_features": [
+  "period",
+  "weekday"
+ ],
+ "splits": {
+  "candidate_train": [
+   "2010-01-01",
+   "2012-12-31"
+  ],
+  "tau_tune": [
+   "2013-01-01",
+   "2013-12-31"
+  ],
+  "final_train": [
+   "2010-01-01",
+   "2013-12-31"
+  ],
+  "test": [
+   "2014-01-01",
+   "2014-12-31"
+  ]
+ },
+ "dates": {
+  "candidate_train": [
+   "2010-01-08",
+   "2012-12-31",
+   1089,
+   52272
+  ],
+  "tau_tune": [
+   "2013-01-01",
+   "2013-12-31",
+   365,
+   17520
+  ],
+  "final_train": [
+   "2010-01-08",
+   "2013-12-31",
+   1454,
+   69792
+  ],
+  "test": [
+   "2014-01-01",
+   "2014-12-31",
+   365,
+   17520
+  ]
+ },
+ "dropped_days": {
+  "candidate_train": [
+   "2010-01-01",
+   "2010-01-02",
+   "2010-01-03",
+   "2010-01-04",
+   "2010-01-05",
+   "2010-01-06",
+   "2010-01-07"
+  ],
+  "tau_tune": [],
+  "final_train": [
+   "2010-01-01",
+   "2010-01-02",
+   "2010-01-03",
+   "2010-01-04",
+   "2010-01-05",
+   "2010-01-06",
+   "2010-01-07"
+  ],
+  "test": []
+ },
+ "tau": 0.48,
+ "tau_tied": [
+  0.48
+ ],
+ "tau_at_endpoint": false,
+ "tau_tune_BalAcc_2013": 79.71256106078839,
+ "tau_tune_Acc_2013": 79.57762557077626,
+ "test_2014": {
+  "Acc": 80.1027397260274,
+  "BalAcc": 80.15618486078402,
+  "n": 17520,
+  "pos_rate_true": 48.62442922374429,
+  "pos_rate_pred": 51.11301369863014,
+  "tp": 6994,
+  "tn": 7040,
+  "fp": 1961,
+  "fn": 1525
+ },
+ "test_2014_tau_0.50_reference": {
+  "Acc": 80.09703196347033,
+  "BalAcc": 80.12077188434111,
+  "n": 17520,
+  "pos_rate_true": 48.62442922374429,
+  "pos_rate_pred": 50.034246575342465,
+  "tp": 6899,
+  "tn": 7134,
+  "fp": 1867,
+  "fn": 1620
+ },
+ "hashes": {
+  "X_candidate_train": "e0418bee64def89bd6d326f0a79082612d94921c1ddb2f6e431e5a980b3978df",
+  "y_candidate_train": "1fd6dfab4ce3f9641b948866fa1abbc91995a8e896e70dd5531c38b8c74ec912",
+  "X_tau_tune": "37111f6c458f4d1bba0658c8de1eaf7f9463fbc1596f38eb5535a20cc82ce3ad",
+  "y_tau_tune": "3830e2407286ba554ba35d62fbf4ff0a8dbd17618941febd034946d97092b584",
+  "proba_tau_tune": "44c0e4c707187497d0d866d44073b9bdafa7c496a8280b1a0d04a102a065af7a",
+  "X_final_train": "f93a8b19fe2ebbaca494eb7b1ddb2fd15257df65e4b0b02c112d2dbd108fa68b",
+  "y_final_train": "e001f3b5c2d44cda891fd8ebbfc50bfd4e2f624a356f588748b8a361ba436385",
+  "X_test": "43563112a50a289765aa8bb03ac37a94974d2553b3e96bcac9a6122cf1072af2",
+  "y_test": "6d09c55dbf734c6579e331bae3b42527a7d7427872e00797a2cb459bfc631288",
+  "proba_test": "5208a025a1302f01d1b2dce31b0f6a6720b657a77e8b7ecfa6e9deed8e2101fc",
+  "pred_test": "2d5569190e1308ab877f1ddc64603bb6e47d60580dd1653934740ff459b8aa0a"
+ },
+ "candidate_model": {
+  "n_iter": 100,
+  "trees_sha256": "e10b222d82db2013c0475f173a10c5ea36ab5e326b68e2f9f47fa045b53d1f12",
+  "bin_thresholds_sha256": "56235d42ca659a900483a7c073704e8ba94984b38a56d3c7c3571b0d97fe7809",
+  "is_categorical": [
+   "period",
+   "weekday"
+  ]
+ },
+ "final_model": {
+  "n_iter": 100,
+  "trees_sha256": "cf1b3e7eccb56242c815fb8b8e7851ff267dd603fb40c66357968e8c10702928",
+  "bin_thresholds_sha256": "b228d50d96686557292e596560f7d05ddf70a4e028cb733c509c8492dd78ea75",
+  "is_categorical": [
+   "period",
+   "weekday"
+  ]
+ },
+ "environment": {
+  "python": "3.11.8",
+  "implementation": "CPython",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "executable": "/Users/tristanliu/Documents/MyProject/9417/.venv/bin/python",
+  "versions": {
+   "numpy": "2.4.6",
+   "pandas": "3.1.0",
+   "scipy": "1.17.1",
+   "sklearn": "1.9.1"
+  },
+  "threadpools": [
+   {
+    "internal_api": "openmp",
+    "version": null,
+    "num_threads": 8
+   }
+  ]
+ }
+}
