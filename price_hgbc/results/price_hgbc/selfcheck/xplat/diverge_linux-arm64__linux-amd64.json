@@ -1,0 +1,21 @@
+{
+ "a": "linux-arm64",
+ "b": "linux-amd64",
+ "bin_edges_identical": true,
+ "baseline_identical": true,
+ "n_trees": [
+  100,
+  100
+ ],
+ "trees_identical": true,
+ "proba": {
+  "identical": true,
+  "max_abs_diff": 0.0,
+  "median_abs_diff": 0.0,
+  "rows_differing": 0,
+  "median_abs_diff_among_differing": 0.0,
+  "labels_differing_at_0.45": 0,
+  "flips_a1_b0": 0,
+  "flips_a0_b1": 0
+ }
+}

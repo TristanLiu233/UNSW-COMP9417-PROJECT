@@ -1,0 +1,91 @@
+{
+ "model": "P1 boost_price, refit on 2010-01-29..2014-12-31 (Stage 1 frozen model)",
+ "params_from": "results/price_hgbc/official/boost_price_ref.json (REF) - every HGBC parameter read from there",
+ "params": {
+  "categorical_features": "from_dtype",
+  "class_weight": null,
+  "early_stopping": false,
+  "interaction_cst": null,
+  "l2_regularization": 0.0,
+  "learning_rate": 0.1,
+  "loss": "log_loss",
+  "max_bins": 255,
+  "max_depth": null,
+  "max_features": 1.0,
+  "max_iter": 100,
+  "max_leaf_nodes": 15,
+  "min_samples_leaf": 20,
+  "monotonic_cst": null,
+  "n_iter_no_change": 10,
+  "random_state": 17,
+  "scoring": "loss",
+  "tol": 1e-07,
+  "validation_fraction": 0.1,
+  "verbose": 0,
+  "warm_start": false
+ },
+ "features": [
+  "slot_sin",
+  "slot_cos",
+  "season_sin",
+  "season_cos",
+  "weekend",
+  "weekday_0",
+  "weekday_1",
+  "weekday_2",
+  "weekday_3",
+  "weekday_4",
+  "weekday_5",
+  "weekday_6",
+  "nsw_demand_lag1",
+  "nsw_price_lag1",
+  "nsw_demand_lag7",
+  "nsw_price_lag7",
+  "prev_price_mean",
+  "lag1_price_gap"
+ ],
+ "tau": 0.45,
+ "train": {
+  "first_day": "2010-01-29",
+  "last_day": "2014-12-31",
+  "days": 1798,
+  "rows": 86304,
+  "source": "P1 ablation.features.load_study (rows up to 2015-01-01 00:00)"
+ },
+ "feature_code": {
+  "module": "comp9417_project_kit/ablation/features.py",
+  "functions": [
+   "_construct",
+   "_fit_day_types",
+   "CORE"
+  ],
+  "p1_commit": "116e2966310232894c71d9f7b73bc468a09eeee2",
+  "day_type_model_fit": "<= 2013-12-31 profiles (P1 default)",
+  "window_days_per_call": 35
+ },
+ "interface": "predict_price(model, tau, history, weather_next) -> DataFrame[p_up, nsw_price_up] indexed by weather_next.index",
+ "predictions": {
+  "file": "results/price_hgbc/m5/predictions.parquet",
+  "first_day": "2015-01-01",
+  "last_day": "2026-10-31",
+  "columns": [
+   "day",
+   "period",
+   "p_up",
+   "pred"
+  ],
+  "index": "timestamp (interval end)",
+  "labels_stored": false
+ },
+ "cusum": {
+  "config": "results/price_hgbc/m4/cusum_config.json",
+  "ref_update": "A",
+  "q99": 1.0494324087377636,
+  "mu0": 0.4434939030076151,
+  "sigma0": 0.19881467766062375,
+  "k": 0.5,
+  "h": 6,
+  "reset_after_retrain": true,
+  "historical_alarm_2014": "2014-09-26 (results/price_hgbc/m4/cusum_path_2014.csv)"
+ }
+}

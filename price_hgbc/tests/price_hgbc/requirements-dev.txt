@@ -1,0 +1,5 @@
+# Dev-only tools for tests/ (not used in marking). Install on top of comp9417_project_kit/requirements.txt.
+# Installing these left all 10 pinned packages unchanged (see results/price_hgbc/selfcheck/pip_freeze_diff.txt).
+pytest==9.2.0
+pluggy==1.7.0
+iniconfig==2.3.1

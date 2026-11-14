@@ -1,0 +1,37 @@
+### M0.2  2026-11-11 17:25:02  python=Python 3.11.8
+### [1] train.py (run from a scratch copy of example_package so the kit's artifacts/ is not rewritten)
+$ python example_package/train.py data/nem_weather_halfhourly_2010_2026.csv
+Read 295104 half-hours up to 2026-11-01 00:00:00; saved the configuration to /private/tmp/claude-501/-Users-tristanliu--claude-spares-spare-WHVRFb/f9ebecc7-ea01-441e-aa1e-ce26865209c5/scratchpad/example_package_copy/artifacts
+[exit code: 0]
+### config.json from copy vs kit: IDENTICAL
+
+### [2] check_submission
+$ python check_submission.py example_package
+Package found at /Users/tristanliu/Documents/MyProject/9417/comp9417_project_kit/example_package
+
+2026-10-18  ok    init   0.0s  predict   0.0s
+2026-10-19  ok    init   0.0s  predict   0.0s
+2026-10-20  ok    init   0.0s  predict   0.0s
+2026-10-21  ok    init   0.0s  predict   0.0s
+2026-10-22  ok    init   0.0s  predict   0.0s
+2026-10-23  ok    init   0.0s  predict   0.0s
+2026-10-24  ok    init   0.0s  predict   0.0s
+2026-10-25  ok    init   0.0s  predict   0.0s
+2026-10-26  ok    init   0.0s  predict   0.0s
+2026-10-27  ok    init   0.0s  predict   0.0s
+2026-10-28  ok    init   0.0s  predict   0.0s
+2026-10-29  ok    init   0.0s  predict   0.0s
+2026-10-30  ok    init   0.0s  predict   0.0s
+2026-10-31  ok    init   0.0s  predict   0.0s
+
+Scores:
+(in-sample if your models were trained on these days: they check that the package
+ runs, not how it will perform in the live week)
+                              MAPE %   MAE MW  BalAcc %   Acc %
+Your package                    8.29    470.5      79.1    79.5
+Same half-hour yesterday        7.12    415.3      78.0    78.1
+Same half-hour last week        9.95    556.2      73.2    73.5
+
+All days ran successfully.
+[exit code: 0]
+### kit file hashes before vs after (excl .git, data): UNCHANGED

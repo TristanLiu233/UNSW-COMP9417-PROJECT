@@ -1,0 +1,3 @@
+caddy:2 0c994536bddb
+pgvector/pgvector:pg16 ccc6e83d6e35
+python:3.11.13-slim-bookworm 86adf8dbadc3

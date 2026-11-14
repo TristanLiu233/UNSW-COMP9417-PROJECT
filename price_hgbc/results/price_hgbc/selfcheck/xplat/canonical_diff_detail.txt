@@ -1,0 +1,16 @@
+nodes differing per field over all 100 trees (2900 nodes): {'feature_idx': 0, 'left': 0, 'right': 0, 'is_leaf': 0, 'missing_go_to_left': 0, 'num_threshold': 8, 'value': 0, 'gain': 0, 'count': 0}
+num_threshold: 8 nodes, first tree 27, max |diff| 1.110e-16, ulps max 1 median 1
+   tree 27 node 4 season_cos np.float64(-0.5294338912181853) np.float64(-0.5294338912181852)
+   tree 29 node 1 season_cos np.float64(-0.5294338912181853) np.float64(-0.5294338912181852)
+   tree 38 node 13 season_sin np.float64(-0.3536761221763721) np.float64(-0.35367612217637207)
+   tree 64 node 15 season_sin np.float64(0.835925479418637) np.float64(0.8359254794186372)
+   tree 74 node 24 season_sin np.float64(-0.867456354729597) np.float64(-0.8674563547295971)
+all 8 one-ULP threshold differences (macOS vs Linux):
+  tree  27 node  4 season_cos  mac np.float64(-0.5294338912181853) linux np.float64(-0.5294338912181852) ulps 1
+  tree  29 node  1 season_cos  mac np.float64(-0.5294338912181853) linux np.float64(-0.5294338912181852) ulps 1
+  tree  38 node 13 season_sin  mac np.float64(-0.3536761221763721) linux np.float64(-0.35367612217637207) ulps 1
+  tree  64 node 15 season_sin  mac np.float64(0.835925479418637) linux np.float64(0.8359254794186372) ulps 1
+  tree  74 node 24 season_sin  mac np.float64(-0.867456354729597) linux np.float64(-0.8674563547295971) ulps 1
+  tree  81 node 19 slot_cos    mac np.float64(-0.4413417161825447) linux np.float64(-0.44134171618254464) ulps 1
+  tree  91 node 22 season_sin  mac np.float64(-0.867456354729597) linux np.float64(-0.8674563547295971) ulps 1
+  tree  94 node 24 season_sin  mac np.float64(-0.867456354729597) linux np.float64(-0.8674563547295971) ulps 1

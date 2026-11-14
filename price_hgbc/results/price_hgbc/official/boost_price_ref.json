@@ -1,0 +1,182 @@
+{
+ "model": "P1 boost_price (HistGradientBoostingClassifier)",
+ "params": {
+  "categorical_features": "from_dtype",
+  "class_weight": null,
+  "early_stopping": false,
+  "interaction_cst": null,
+  "l2_regularization": 0.0,
+  "learning_rate": 0.1,
+  "loss": "log_loss",
+  "max_bins": 255,
+  "max_depth": null,
+  "max_features": 1.0,
+  "max_iter": 100,
+  "max_leaf_nodes": 15,
+  "min_samples_leaf": 20,
+  "monotonic_cst": null,
+  "n_iter_no_change": 10,
+  "random_state": 17,
+  "scoring": "loss",
+  "tol": 1e-07,
+  "validation_fraction": 0.1,
+  "verbose": 0,
+  "warm_start": false
+ },
+ "features": [
+  "slot_sin",
+  "slot_cos",
+  "season_sin",
+  "season_cos",
+  "weekend",
+  "weekday_0",
+  "weekday_1",
+  "weekday_2",
+  "weekday_3",
+  "weekday_4",
+  "weekday_5",
+  "weekday_6",
+  "nsw_demand_lag1",
+  "nsw_price_lag1",
+  "nsw_demand_lag7",
+  "nsw_price_lag7",
+  "prev_price_mean",
+  "lag1_price_gap"
+ ],
+ "n_features": 18,
+ "tau": 0.45,
+ "decision_rule": "1 iff P(up) >= tau",
+ "train": {
+  "first_day": "2010-01-29",
+  "last_day": "2013-12-31",
+  "rows": 68784
+ },
+ "valid": {
+  "first_day": "2014-01-01",
+  "last_day": "2014-12-31",
+  "rows": 17520
+ },
+ "metrics_2014": {
+  "Acc": 79.1095890410959,
+  "BalAcc": 79.1867969333506,
+  "recall_0": 76.38040217753583,
+  "recall_1": 81.99319168916539,
+  "tn": 6875,
+  "fp": 2126,
+  "fn": 1534,
+  "tp": 6985,
+  "n": 17520
+ },
+ "doc_2014": {
+  "Acc": 79.218,
+  "BalAcc": 79.3,
+  "recall_0": 76.325,
+  "recall_1": 82.275
+ },
+ "diff_vs_doc_pp": {
+  "Acc": -0.10841095890410202,
+  "BalAcc": -0.1132030666493904,
+  "recall_0": 0.0554021775358251,
+  "recall_1": -0.2818083108346201
+ },
+ "matches_doc_3dp": false,
+ "formal_basis": "this environment's result is the formal baseline (user rule, M2.5 step 3): it differs from the documented values, nothing was adjusted, and stability is checked by fresh-process re-runs",
+ "hashes": {
+  "X_train": "645efd28582fe727e80c59939ef42fcf6d3b3846fcfc4f4da7d597cbf6d20d83",
+  "y_train": "4f59813e0592095f1ec18a1d143a5f0a66f7e2c0ce416e542df2127e5fb499a7",
+  "X_valid": "0611ad393e97794eb69dd5cdbab2d020d5da7d408d069db0a9794a8280302aaa",
+  "y_valid": "6d09c55dbf734c6579e331bae3b42527a7d7427872e00797a2cb459bfc631288",
+  "proba_2014": "babd32857fd8e156adec3236db91122c51a20182f620f8e61a8487bcbe692ce3",
+  "pred_2014": "c26828a0e94e621509c629b9bb55646fe2d82524520eab4ec5235ee3d3f1ee9d"
+ },
+ "trees": {
+  "n_iter": 100,
+  "trees_sha256": "72e4f7a9e45cf6d1b83409a7e4daccc6d9b0b025ac34e4ab5670aea5df2b2d12"
+ },
+ "p1": {
+  "repo": "comp9417_project_kit",
+  "remote": "https://github.com/TristanLiu233/UNSW-COMP9417-PROJECT.git",
+  "branch": "baseline",
+  "commit": "116e2966310232894c71d9f7b73bc468a09eeee2",
+  "files_last_commit": {
+   "ablation/features.py": "116e2966310232894c71d9f7b73bc468a09eeee2",
+   "ablation/models.py": "116e2966310232894c71d9f7b73bc468a09eeee2",
+   "ablation/\u6d88\u878d\u8bf4\u660e.md": "116e2966310232894c71d9f7b73bc468a09eeee2",
+   "ablation/results/selection.csv": "116e2966310232894c71d9f7b73bc468a09eeee2"
+  },
+  "files_sha256": {
+   "ablation/features.py": "48a8923589038726fd4862283c0fe8ff5adf06a40282729d82910c38dfc4862c",
+   "ablation/models.py": "ce0686075cdba03410f8d2efd69d7ebdc82d9a38443007f2028cefe19eb136f3",
+   "ablation/\u6d88\u878d\u8bf4\u660e.md": "3ed69367db5f3a75cab2b94986d4548774ff9fce95a228e14c92485f1a4ab425",
+   "ablation/results/selection.csv": "27bf7a5d8b80b19541e3b05404d880ee2e2287d573156cf5d29c2833969326a9"
+  },
+  "ablation_clean_vs_HEAD": true,
+  "imported": [
+   "ablation.features",
+   "ablation.models"
+  ]
+ },
+ "p1_selection_row": {
+  "config": "tuned_C",
+  "columns": [
+   "slot_sin",
+   "slot_cos",
+   "season_sin",
+   "season_cos",
+   "weekend",
+   "weekday_0",
+   "weekday_1",
+   "weekday_2",
+   "weekday_3",
+   "weekday_4",
+   "weekday_5",
+   "weekday_6",
+   "nsw_demand_lag1",
+   "nsw_price_lag1",
+   "nsw_demand_lag7",
+   "nsw_price_lag7",
+   "prev_price_mean",
+   "lag1_price_gap"
+  ],
+  "parameter": 15,
+  "threshold": 0.45,
+  "train_rows": 68784,
+  "valid_rows": 17520,
+  "saved_BalAcc": 79.29988384512427,
+  "saved_Acc": 79.21803652968038,
+  "saved_Recall0": 76.32485279413399,
+  "saved_Recall1": 82.27491489611457
+ },
+ "environment": {
+  "python": "3.11.8",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "versions": {
+   "numpy": "2.4.6",
+   "pandas": "3.1.0",
+   "scipy": "1.17.1",
+   "sklearn": "1.9.1",
+   "joblib": "1.6.0"
+  },
+  "threadpools": [
+   {
+    "internal_api": "openmp",
+    "num_threads": 8
+   }
+  ]
+ },
+ "files": {
+  "preds_2014.parquet": "b4c9890d0149d69c902dcc10685db82c7b2d19d253a57a72ce0483a1f93c0c29",
+  "boost_price_model.joblib": "9206389cfbebe6436550875273c172d5557ddb7e781252c06899281a38b128bf"
+ },
+ "baselines_2014_da": {
+  "b1": {
+   "BalAcc": 73.98617484807123,
+   "Acc": 73.9041095890411
+  },
+  "b7": {
+   "BalAcc": 74.2817557319315,
+   "Acc": 74.24657534246575
+  }
+ }
+}
