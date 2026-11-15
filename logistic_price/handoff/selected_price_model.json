@@ -1,0 +1,20 @@
+{
+  "status": "selected_price_model_confirmed_2026-11-15",
+  "model": {
+    "model": "log_interactions31",
+    "recipe": "log_interactions31",
+    "n_features": 31,
+    "C": 1.0,
+    "class_weight": null,
+    "threshold": 0.42,
+    "BalAcc": 79.12494730176907,
+    "Accuracy": 79.01826484018265
+  },
+  "feature_v1_alignment": "verified_against_shared_v1",
+  "feature_module_sha256": "49a0b02495e60466bc5b2295056f845b84b3a849ec2e43ac895b6ece576a8666",
+  "group_feature_change_approval": "user_confirmed_selection_2026-11-15",
+  "training_cutoff": "2014-12-31",
+  "random_state": 17,
+  "artifact_dir": "logistic_price/results/frozen/artifacts/log_interactions31",
+  "note": "Selected price model for Stage 2. Frozen through 2014; Stage 3 training is a separate task."
+}

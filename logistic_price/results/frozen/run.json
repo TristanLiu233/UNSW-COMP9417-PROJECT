@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "selected": "log_interactions31",
+  "csv_sha256": "c13711002906140eaf7cc67c1ce17a49facd359cf3d1a84722aaa3ccd647752c",
+  "train_rows": 68784,
+  "validation_rows": 17520,
+  "refit_rows": 86304,
+  "replay_rows": 207456,
+  "replay_days": 4322,
+  "replay_months": 142,
+  "bootstrap_repetitions": 2000,
+  "seed": 17,
+  "daily_checks": 4322,
+  "daily_total_seconds": 34.63468879193533,
+  "worst_predict_seconds": 0.15548145794309676,
+  "versions": {
+    "python": "3.11.18",
+    "numpy": "2.4.6",
+    "pandas": "3.1.0",
+    "scipy": "1.17.1",
+    "sklearn": "1.9.1",
+    "joblib": "1.6.0"
+  }
+}
