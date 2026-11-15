@@ -1,0 +1,48 @@
+=== common_tests ===
+test_batch_and_day_match_on_seeded_days_and_boundaries (test_common_features.FeatureContractTests.test_batch_and_day_match_on_seeded_days_and_boundaries) ... ok
+test_future_market_values_cannot_change_target_day (test_common_features.FeatureContractTests.test_future_market_values_cannot_change_target_day) ... ok
+test_market_midnight_and_observed_public_holiday (test_common_features.FeatureContractTests.test_market_midnight_and_observed_public_holiday) ... ok
+test_reject_broken_market_days (test_common_features.FeatureContractTests.test_reject_broken_market_days) ... ok
+test_schema_warmup_and_source_values (test_common_features.FeatureContractTests.test_schema_warmup_and_source_values) ... ok
+test_17_seeded_years_and_six_boundary_days_match_bit_for_bit (test_common_features.ReleasedDataTests.test_17_seeded_years_and_six_boundary_days_match_bit_for_bit) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.900s
+
+OK
+
+=== verify ===
+PASS: full replay timestamps/targets/baselines; all overall/yearly/monthly metrics; all saved model interfaces; future poisoning; derived-feature ablations; metric edge cases.
+
+=== selfcheck ===
+SYNTHETIC DATA ONLY — the following numbers are NOT course results.
+         experiment    BalAcc  Accuracy  delta_vs_full_pp
+ document_reference 77.055093 77.031963         -0.726063
+               full 77.781156 77.779680          0.000000
+   without_calendar 77.775636 77.773973         -0.005520
+    without_history 77.438102 77.437215         -0.343054
+without_cross_state 77.775344 77.773973         -0.005812
+  without_rolling28 77.769866 77.768265         -0.011291
+PASS: synthetic feature parity, future isolation, invalid inputs, tuning, ablations, serialization, overwrite protection
+
+=== integration ===
+PASS: document_reference, all validation and replay predictions
+PASS: log22, all validation and replay predictions
+PASS: log_gaps25, all validation and replay predictions
+PASS: log_interactions31, all validation and replay predictions
+PASS: previous_raw22, all validation and replay predictions
+PASS: raw22, all validation and replay predictions
+PASS: shared daily interface 1/4322
+PASS: shared daily interface 366/4322
+PASS: shared daily interface 731/4322
+PASS: shared daily interface 1096/4322
+PASS: shared daily interface 1461/4322
+PASS: shared daily interface 1826/4322
+PASS: shared daily interface 2191/4322
+PASS: shared daily interface 2556/4322
+PASS: shared daily interface 2921/4322
+PASS: shared daily interface 3286/4322
+PASS: shared daily interface 3651/4322
+PASS: shared daily interface 4016/4322
+PASS: shared daily interface 4322/4322
+PASS: shared-v1 validation training, frozen replay and every selected-model day

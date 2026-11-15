@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "search_profile": "extended",
+  "search_candidates": 2070,
+  "csv_prefix_sha256": "8243fff94d730db8c221cd21b9d59413c40dfe4cd6621c50e0b35233aca84a4b",
+  "train_rows": 68784,
+  "validation_rows": 17520,
+  "selection": {
+    "C": 10.0,
+    "class_weight": {
+      "0": 1,
+      "1": 1.5
+    },
+    "threshold": 0.39,
+    "BalAcc": 73.1521939284942,
+    "Accuracy": 72.6541095890411
+  },
+  "tuning": "expanding training; held-out Jan-Jun and Jul-Dec 2013; pooled scores",
+  "ablation": "fixed full-model C, class_weight and threshold; refit each reduced feature set",
+  "caveat": "22-column recipe previously selected on 2014; 2014 is selection validation, not independent test",
+  "versions": {
+    "python": "3.13.0",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "sklearn": "1.9.1",
+    "joblib": "1.6.0"
+  }
+}
