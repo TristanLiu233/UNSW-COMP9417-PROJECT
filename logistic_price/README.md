@@ -6,7 +6,7 @@ All experiments use the course dataset and a pipeline consisting of `StandardSca
 
 ## Selected model
 
-The group selected `log_interactions31` on 15 November 2026. `PriceClassifier()` loads this model by default: C=1, no class weighting, threshold=0.42, fitted through 2014. The selected configuration is in [selected_price_model.json](handoff/selected_price_model.json). Other configurations remain as experiment records. Final Stage 3 training will be implemented separately.
+The group selected `log_interactions31` on 15 November 2026. `PriceClassifier()` loads this model by default: C=1, no class weighting, threshold=0.42, fitted through 2014. The selected configuration is in [selected_price_model.json](handoff/selected_price_model.json). Other configurations remain as experiment records. The expanding-window training component and explicit nested probability-threshold interface are documented in [final_training.md](notes/final_training.md); tau denotes the probability threshold, selected on the last calendar year before the final expanding-window refit.
 
 ## Models and features
 
@@ -184,3 +184,8 @@ Shared feature-table v1 integration is recorded in [the integration check](notes
 The candidate configuration is in `handoff/p4_stage1_candidate.json`. The group has confirmed log_interactions31 as the selected price model. This directory still needs to be merged into main and included in the shared Stage 1 configuration. The complete submission also needs the demand model's `nsw_demand_mw` output and the common `Forecaster` interface.
 
 The report outline, figure conventions and live-week analysis framework are included under `notes/`. The model-age example covers 2015-02-06 to 2015-02-12, days 37–43 after the frozen training cutoff. This provides one historical week for the analysis framework; further windows depend on the group's retraining records.
+
+## P4 current handoff (2026-11-16)
+
+- [Expanding-window training, explicit temporal selection and tests](notes/final_training.md)
+- [Figure conventions release entry](handoff/figure_conventions_release.md), linking the unchanged [existing conventions](notes/figure_conventions.md).
