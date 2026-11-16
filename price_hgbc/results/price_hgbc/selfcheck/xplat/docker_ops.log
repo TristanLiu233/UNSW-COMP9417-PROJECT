@@ -1,0 +1,163 @@
+# Docker operations log (M1 xplat) — 2026-11-11 18:56:43 +1100
+## state before recovery: backend PID 11759 started Wed Nov 11 17:46:04 2026    ; virtualization process: none
+## known images from the first survey (17:46): caddy:2 0c994536bddb (linux/arm64), pgvector/pgvector:pg16 ccc6e83d6e35 (linux/arm64); volumes: not listed then
+## recovery round 1: docker desktop stop; docker desktop start
+✓ Stopping Docker Desktop
+stop rc=0
+after stop: backend procs: 0
+✓ Starting Docker Desktop
+start rc=0
+Name                Value
+Status              starting
+SessionID           420e8463-7060-427b-8cb4-fec6d66dc58d
+engine 29.8.0 linux/aarch64 kernel=7.0.12-linuxkit cpus=8 mem=8319770624 driver=overlayfs
+## 18:57:19 images before experiment
+caddy:2 0c994536bddb sha256:0c994536bddb66445885237f1a5dcc1916bccea922661c76b4e9fc24061f9b52
+pgvector/pgvector:pg16 ccc6e83d6e35 sha256:ccc6e83d6e35e931dc7c5def2022729d5a6c370318d099181995567ff1fb4d6b
+## volumes before
+app_postgres_data
+## containers before
+app-db-1 pgvector/pgvector:pg16 Exited (0) 4 weeks ago
+## docker info
+server=29.8.0 os=Docker Desktop arch=aarch64 kernel=7.0.12-linuxkit storage=overlayfs
+client=29.8.0 api=1.56 server=29.8.0
+## 18:57:32 docker pull --platform linux/arm64 python:3.11.13-slim-bookworm
+3.11.13-slim-bookworm: Pulling from library/python
+123d7f46036e: Pulling fs layer
+bc485fc81f57: Pulling fs layer
+f4e51325a7cb: Pulling fs layer
+ffe6392fd247: Pulling fs layer
+123d7f46036e: Download complete
+bc485fc81f57: Download complete
+9c29cd50dd75: Download complete
+ffe6392fd247: Download complete
+2eadfb72ed4e: Download complete
+f4e51325a7cb: Download complete
+bc485fc81f57: Pull complete
+f4e51325a7cb: Pull complete
+123d7f46036e: Pull complete
+ffe6392fd247: Pull complete
+Digest: sha256:86adf8dbadc3d6e82ee5dd2c74bec2e1c2467cdad47886280501df722372d2e1
+Status: Downloaded newer image for python:3.11.13-slim-bookworm
+docker.io/library/python:3.11.13-slim-bookworm
+pull rc=0
+## 18:57:53 run_xplat_docker.sh arm64
+Linux dcd6ba6bb971 7.0.12-linuxkit #1 SMP PREEMPT Thu Aug 27 14:02:21 UTC 2026 aarch64 GNU/Linux
+Python 3.11.13 (main, Sep 30 2025, 00:43:28) [GCC 12.2.0]
+pip 24.0 from /usr/local/lib/python3.11/site-packages/pip (python 3.11)
+boost_price  tuned_C            fit    1.3s  mismatch_vs_saved 157
+boost_price  tuned_CR           fit    0.8s  mismatch_vs_saved 0
+boost_price  C                  fit    2.2s  mismatch_vs_saved 478
+boost_price  CR                 fit    2.2s  mismatch_vs_saved 0
+boost_price  CW                 fit    1.4s  mismatch_vs_saved 305
+boost_price  tuned_CW           fit    1.4s  mismatch_vs_saved 0
+boost_price  F                  fit    2.2s  mismatch_vs_saved 360
+boost_price  tuned_F            fit    1.8s  mismatch_vs_saved 0
+boost_demand drop_F_qld_price   fit    2.0s  mismatch_vs_saved 0
+boost_demand C                  fit    1.3s  mismatch_vs_saved 17520
+boost_demand tuned_C            fit    2.4s  mismatch_vs_saved 17520
+wrote /work/results/price_hgbc/selfcheck/xplat/xplat_linux-arm64_run1.json in 20.4 s
+boost_price  tuned_C            fit    0.9s  mismatch_vs_saved 157
+boost_price  tuned_CR           fit    1.0s  mismatch_vs_saved 0
+boost_price  C                  fit    1.8s  mismatch_vs_saved 478
+boost_price  CR                 fit    1.3s  mismatch_vs_saved 0
+boost_price  CW                 fit    1.7s  mismatch_vs_saved 305
+boost_price  tuned_CW           fit    0.6s  mismatch_vs_saved 0
+boost_price  F                  fit    2.2s  mismatch_vs_saved 360
+boost_price  tuned_F            fit    0.7s  mismatch_vs_saved 0
+boost_demand drop_F_qld_price   fit    2.1s  mismatch_vs_saved 0
+boost_demand C                  fit    0.9s  mismatch_vs_saved 17520
+boost_demand tuned_C            fit    1.9s  mismatch_vs_saved 17520
+wrote /work/results/price_hgbc/selfcheck/xplat/xplat_linux-arm64_run2.json in 16.6 s
+Linux-7.0.12-linuxkit-aarch64-with-glibc2.36 | aarch64 |  | py 3.11.13
+prefix matches run.json: True | BalAcc 79.18680 (group 79.29988) | mismatches vs saved 157
+done arm64
+bash src/price_hgbc/run_xplat_docker.sh arm64  0.17s user 0.18s system 0% cpu 4:50.51 total
+script rc=0
+## 19:02:43 containers after arm64:
+app-db-1 pgvector/pgvector:pg16 Exited (0) 4 weeks ago
+## 19:03:01 docker pull --platform linux/amd64 python:3.11.13-slim-bookworm
+3.11.13-slim-bookworm: Pulling from library/python
+5c32499ab806: Pulling fs layer
+38b7e0d95f77: Pulling fs layer
+a64c132cd1a4: Pulling fs layer
+d61a97008ede: Pulling fs layer
+38b7e0d95f77: Download complete
+5c32499ab806: Download complete
+d61a97008ede: Download complete
+b8522cb732a0: Download complete
+38b7e0d95f77: Pull complete
+5c32499ab806: Pull complete
+a64c132cd1a4: Download complete
+4eb90493158c: Download complete
+d61a97008ede: Pull complete
+a64c132cd1a4: Pull complete
+Digest: sha256:86adf8dbadc3d6e82ee5dd2c74bec2e1c2467cdad47886280501df722372d2e1
+Status: Image is up to date for python:3.11.13-slim-bookworm
+docker.io/library/python:3.11.13-slim-bookworm
+pull rc=0
+## 19:03:11 run_xplat_docker.sh amd64
+Linux d8e78598edf6 7.0.12-linuxkit #1 SMP PREEMPT Thu Aug 27 14:02:21 UTC 2026 x86_64 GNU/Linux
+Python 3.11.13 (main, Sep 30 2025, 00:39:50) [GCC 12.2.0]
+pip 24.0 from /usr/local/lib/python3.11/site-packages/pip (python 3.11)
+boost_price  tuned_C            fit    1.0s  mismatch_vs_saved 157
+boost_price  tuned_CR           fit    1.0s  mismatch_vs_saved 0
+boost_price  C                  fit    2.3s  mismatch_vs_saved 478
+boost_price  CR                 fit    1.7s  mismatch_vs_saved 0
+boost_price  CW                 fit    1.1s  mismatch_vs_saved 305
+boost_price  tuned_CW           fit    0.9s  mismatch_vs_saved 0
+boost_price  F                  fit    1.4s  mismatch_vs_saved 360
+boost_price  tuned_F            fit    0.9s  mismatch_vs_saved 0
+boost_demand drop_F_qld_price   fit    1.6s  mismatch_vs_saved 0
+boost_demand C                  fit    1.6s  mismatch_vs_saved 17520
+boost_demand tuned_C            fit    1.1s  mismatch_vs_saved 17520
+wrote /work/results/price_hgbc/selfcheck/xplat/xplat_linux-amd64_run1.json in 18.0 s
+boost_price  tuned_C            fit    1.1s  mismatch_vs_saved 157
+boost_price  tuned_CR           fit    1.8s  mismatch_vs_saved 0
+boost_price  C                  fit    1.6s  mismatch_vs_saved 478
+boost_price  CR                 fit    3.5s  mismatch_vs_saved 0
+boost_price  CW                 fit    1.4s  mismatch_vs_saved 305
+boost_price  tuned_CW           fit    3.1s  mismatch_vs_saved 0
+boost_price  F                  fit    3.9s  mismatch_vs_saved 360
+boost_price  tuned_F            fit    4.7s  mismatch_vs_saved 0
+boost_demand drop_F_qld_price   fit    3.3s  mismatch_vs_saved 0
+boost_demand C                  fit    2.2s  mismatch_vs_saved 17520
+boost_demand tuned_C            fit    3.1s  mismatch_vs_saved 17520
+wrote /work/results/price_hgbc/selfcheck/xplat/xplat_linux-amd64_run2.json in 32.1 s
+Linux-7.0.12-linuxkit-x86_64-with-glibc2.36 | x86_64 | VirtualApple @ 2.50GHz | py 3.11.13
+prefix matches run.json: True | BalAcc 79.18680 (group 79.29988) | mismatches vs saved 157
+done amd64
+bash src/price_hgbc/run_xplat_docker.sh amd64  0.16s user 0.18s system 0% cpu 4:57.81 total
+script rc=0
+## 19:08:08 run_xplat_trees_docker.sh amd64
+wrote /work/results/price_hgbc/selfcheck/xplat/trees_linux-amd64.npz trees 100 nodes 2900
+done trees amd64
+trees amd64 rc=0
+## 19:12:34 run_xplat_trees_docker.sh arm64
+wrote /work/results/price_hgbc/selfcheck/xplat/trees_linux-arm64.npz trees 100 nodes 2900
+done trees arm64
+trees arm64 rc=0
+## 19:17:42 containers after:
+app-db-1 pgvector/pgvector:pg16 Exited (0) 4 weeks ago
+## 19:19:28 cleanup
+containers:
+app-db-1 pgvector/pgvector:pg16 Exited (0) 4 weeks ago
+images after:
+caddy:2 0c994536bddb
+pgvector/pgvector:pg16 ccc6e83d6e35
+python:3.11.13-slim-bookworm 86adf8dbadc3
+pre-existing images still present: 0 missing
+pre-existing volumes still present: 0 missing
+sha256:86adf8dbadc3d6e82ee5dd2c74bec2e1c2467cdad47886280501df722372d2e1
+IMAGE                          ID             DISK USAGE   CONTENT SIZE   EXTRA
+python:3.11.13-slim-bookworm   86adf8dbadc3        421MB          101MB        
+├─ linux/amd64                 cec9aa7aa96e        195MB           48MB        
+├─ linux/arm/v5                3eb6251ad149           0B             0B        
+├─ linux/arm/v7                c09dac746726           0B             0B        
+├─ linux/arm64/v8              18ce9b03d188        221MB         47.6MB        
+├─ linux/386                   51adcbffa3ba           0B             0B        
+├─ linux/ppc64le               4dcce3cbd9ac           0B             0B        
+stopping Docker Desktop (was not running before this work)
+✓ Stopping Docker Desktop
+stop rc=0
+backend processes left: 0, virtualization: 0

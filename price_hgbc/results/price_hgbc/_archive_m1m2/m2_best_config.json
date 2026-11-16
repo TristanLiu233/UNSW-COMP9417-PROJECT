@@ -1,0 +1,184 @@
+{
+ "decision": "retain_M1",
+ "decision_rule": "2013 BalAcc gain >= 0.5 pp vs M1_ref and paired day-bootstrap 95% CI excludes 0",
+ "feature_set_2a_winner": "M1",
+ "best_config_id": "g21_L31_lr0.05_it200_l20.1",
+ "feature_set": "M1",
+ "features": [
+  "up_lag1",
+  "up_lag7",
+  "syd_temp",
+  "syd_rh",
+  "syd_cloud",
+  "syd_solar",
+  "mel_temp",
+  "mel_rh",
+  "mel_cloud",
+  "mel_solar",
+  "bne_temp",
+  "bne_rh",
+  "bne_cloud",
+  "bne_solar",
+  "period",
+  "weekday",
+  "price_gap_lag1",
+  "price_gap_lag7"
+ ],
+ "params": {
+  "categorical_features": [
+   "period",
+   "weekday"
+  ],
+  "class_weight": null,
+  "early_stopping": false,
+  "interaction_cst": null,
+  "l2_regularization": 0.1,
+  "learning_rate": 0.05,
+  "loss": "log_loss",
+  "max_bins": 255,
+  "max_depth": null,
+  "max_features": 1.0,
+  "max_iter": 200,
+  "max_leaf_nodes": 31,
+  "min_samples_leaf": 20,
+  "monotonic_cst": null,
+  "n_iter_no_change": 10,
+  "random_state": 17,
+  "scoring": "loss",
+  "tol": 1e-07,
+  "validation_fraction": 0.1,
+  "verbose": 0,
+  "warm_start": false
+ },
+ "class_weight_from_M1": null,
+ "tau": 0.51,
+ "tau_at_endpoint": false,
+ "validation": {
+  "folds": [
+   {
+    "fold": 1,
+    "train": [
+     "2010-01-29",
+     "2012-12-31"
+    ],
+    "valid": [
+     "2013-01-01",
+     "2013-06-30"
+    ]
+   },
+   {
+    "fold": 2,
+    "train": [
+     "2010-01-29",
+     "2013-06-30"
+    ],
+    "valid": [
+     "2013-07-01",
+     "2013-12-31"
+    ]
+   }
+  ],
+  "BalAcc_2013": 79.84334745856397,
+  "Acc_2013": 79.80593607305936,
+  "M1_ref_BalAcc_2013": 79.46548103,
+  "M1_ref_Acc_2013": 79.32077626,
+  "M1_ref_tau": 0.48,
+  "gain_pp": 0.37786642856396213,
+  "gain_ci95": [
+   0.036462048500077414,
+   0.7207820763780481
+  ],
+  "tied_with_top": [
+   "g21_L31_lr0.05_it200_l20.1"
+  ],
+  "top5_spread_pp": 0.19665655000000015,
+  "top5_within_noise_warning": true
+ },
+ "test_2014_confirmation": {
+  "g21_L31_lr0.05_it200_l20.1": {
+   "tau": 0.51,
+   "Acc": 80.31392694063926,
+   "BalAcc": 80.32368786768211,
+   "n": 17520,
+   "pos_rate_true": 48.62442922374429,
+   "pos_rate_pred": 49.52054794520548,
+   "tp": 6873,
+   "tn": 7198,
+   "fp": 1803,
+   "fn": 1646,
+   "feature_set": "M1",
+   "final_train": [
+    "2010-01-29",
+    "2013-12-31",
+    68784
+   ],
+   "proba_sha256": "e4e9551d74c0693b14312bb3278a7ebdab2fb44940a49defc9b8524f3993c0ea",
+   "pred_sha256": "faeeab9680cd4bb00e75ce58fc63f3247e72f082f9fa51b8d3b2543c8577dae1",
+   "final_model": {
+    "n_iter": 200,
+    "trees_sha256": "6cc77bc43f08cc08b5c54e10e1e20e9906cc6bf01933c6619b7d1ed479f57747",
+    "bin_thresholds_sha256": "176aee2ffc9eb94c003e91f19aea6a8964b2bc94d2ee8d83c7b1133d0e6ff3a3",
+    "is_categorical": [
+     "period",
+     "weekday"
+    ]
+   }
+  },
+  "M1_ref": {
+   "tau": 0.48,
+   "Acc": 80.07990867579909,
+   "BalAcc": 80.12705061438896,
+   "n": 17520,
+   "pos_rate_true": 48.62442922374429,
+   "pos_rate_pred": 50.88470319634703,
+   "tp": 6972,
+   "tn": 7058,
+   "fp": 1943,
+   "fn": 1547,
+   "feature_set": "M1",
+   "final_train": [
+    "2010-01-29",
+    "2013-12-31",
+    68784
+   ],
+   "proba_sha256": "785e878b0ddff93eabc9497556493f5273dd613a7fa258e5f2da526755ba72bd",
+   "pred_sha256": "e3e712da61bce8780c7f73a38c1d392da14243704d428ffaf96370444316f9a3",
+   "final_model": {
+    "n_iter": 100,
+    "trees_sha256": "5e2cf23b04cdb97ae22319502f53ad526ce41db94f15ddc848994897a1bcbce2",
+    "bin_thresholds_sha256": "176aee2ffc9eb94c003e91f19aea6a8964b2bc94d2ee8d83c7b1133d0e6ff3a3",
+    "is_categorical": [
+     "period",
+     "weekday"
+    ]
+   }
+  }
+ },
+ "reference_numbers": {
+  "M1_official_2014_BalAcc": 80.15618486078402,
+  "b7_2014_BalAcc": 74.2817557319315,
+  "b1_2014_BalAcc": 73.98617484807123,
+  "target_BalAcc": 82.0
+ },
+ "environment": {
+  "python": "3.11.8",
+  "implementation": "CPython",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "arm",
+  "executable": "/Users/tristanliu/Documents/MyProject/9417/.venv/bin/python",
+  "versions": {
+   "numpy": "2.4.6",
+   "pandas": "3.1.0",
+   "scipy": "1.17.1",
+   "sklearn": "1.9.1"
+  },
+  "threadpools": [
+   {
+    "internal_api": "openmp",
+    "version": null,
+    "num_threads": 8
+   }
+  ]
+ }
+}

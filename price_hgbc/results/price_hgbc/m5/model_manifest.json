@@ -1,0 +1,68 @@
+{
+ "files": {
+  "model": {
+   "path": "results/price_hgbc/m5/stage1_model.joblib",
+   "sha256": "bca5291ba0e143db518f220f112b5bcfad127a42d3de7bd3a167edbea246a1d6"
+  },
+  "config": {
+   "path": "results/price_hgbc/m5/stage1_config.json",
+   "sha256": "f7cea1483d46159402593745ad0a26f7c70700d3ab74c20a022daa5243706504"
+  },
+  "preds": {
+   "path": "results/price_hgbc/m5/predictions.parquet",
+   "sha256": "9014a23e12df76f1885dd00176c480a8d6a1ab645cc23b00791a81e4226ba8d9"
+  },
+  "dtm": {
+   "path": "results/price_hgbc/m5/p1_day_type_model.joblib",
+   "sha256": "555cb2fbfcabdd440482260ed858e7fc810e28808f66082eed6f0442c33383a2"
+  }
+ },
+ "train_seconds": 1.377,
+ "trained_at": "2026-11-11 22:46:43 AEDT",
+ "versions": {
+  "python": "3.11.8",
+  "sklearn": "1.9.1",
+  "numpy": "2.4.6",
+  "pandas": "3.1.0",
+  "joblib": "1.6.0"
+ },
+ "platform": "macOS-26.6.2-arm64-arm-64bit",
+ "data_csv_sha256": "c13711002906140eaf7cc67c1ce17a49facd359cf3d1a84722aaa3ccd647752c",
+ "ref_sha256": "06b022774a10dad545dacb9a73d910a73eccd37d1ebc14d3f605d6e9ff210725",
+ "p1_commit": "116e2966310232894c71d9f7b73bc468a09eeee2",
+ "fingerprint": {
+  "trees": {
+   "n_iter": 100,
+   "trees_sha256": "51ec055f7f67310f1289efafccac53ab7ba72194114ebad550bdaef1ffec6572"
+  },
+  "X_train_sha256": "f986459f154dcadaa38759a19c44c9926b9f04ae5e880e19c1e67d128d912525",
+  "y_train_sha256": "6be5b5e7e44d1a45d9506ca16d51d552177870c73e903f8a143867d4b22fc835",
+  "p_up_sha256": "654fb8007b974719134f3d87e6697619d2bfed2a0d23c7da28d3e56e129729e0",
+  "pred_sha256": "8640eb8e0575db145785e1fa12dc6aeba3d077b93b97be12f0f86d48267718a4",
+  "params": {
+   "categorical_features": "from_dtype",
+   "class_weight": null,
+   "early_stopping": false,
+   "interaction_cst": null,
+   "l2_regularization": 0.0,
+   "learning_rate": 0.1,
+   "loss": "log_loss",
+   "max_bins": 255,
+   "max_depth": null,
+   "max_features": 1.0,
+   "max_iter": 100,
+   "max_leaf_nodes": 15,
+   "min_samples_leaf": 20,
+   "monotonic_cst": null,
+   "n_iter_no_change": 10,
+   "random_state": 17,
+   "scoring": "loss",
+   "tol": 1e-07,
+   "validation_fraction": 0.1,
+   "verbose": 0,
+   "warm_start": false
+  }
+ },
+ "pred_rows": 207456,
+ "pred_days": 4322
+}

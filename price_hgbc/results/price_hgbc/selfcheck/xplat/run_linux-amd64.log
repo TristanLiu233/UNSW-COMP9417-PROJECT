@@ -1,0 +1,63 @@
+## 19:03:01 docker pull --platform linux/amd64 python:3.11.13-slim-bookworm
+3.11.13-slim-bookworm: Pulling from library/python
+5c32499ab806: Pulling fs layer
+38b7e0d95f77: Pulling fs layer
+a64c132cd1a4: Pulling fs layer
+d61a97008ede: Pulling fs layer
+38b7e0d95f77: Download complete
+5c32499ab806: Download complete
+d61a97008ede: Download complete
+b8522cb732a0: Download complete
+38b7e0d95f77: Pull complete
+5c32499ab806: Pull complete
+a64c132cd1a4: Download complete
+4eb90493158c: Download complete
+d61a97008ede: Pull complete
+a64c132cd1a4: Pull complete
+Digest: sha256:86adf8dbadc3d6e82ee5dd2c74bec2e1c2467cdad47886280501df722372d2e1
+Status: Image is up to date for python:3.11.13-slim-bookworm
+docker.io/library/python:3.11.13-slim-bookworm
+pull rc=0
+## 19:03:11 run_xplat_docker.sh amd64
+Linux d8e78598edf6 7.0.12-linuxkit #1 SMP PREEMPT Thu Aug 27 14:02:21 UTC 2026 x86_64 GNU/Linux
+Python 3.11.13 (main, Sep 30 2025, 00:39:50) [GCC 12.2.0]
+pip 24.0 from /usr/local/lib/python3.11/site-packages/pip (python 3.11)
+boost_price  tuned_C            fit    1.0s  mismatch_vs_saved 157
+boost_price  tuned_CR           fit    1.0s  mismatch_vs_saved 0
+boost_price  C                  fit    2.3s  mismatch_vs_saved 478
+boost_price  CR                 fit    1.7s  mismatch_vs_saved 0
+boost_price  CW                 fit    1.1s  mismatch_vs_saved 305
+boost_price  tuned_CW           fit    0.9s  mismatch_vs_saved 0
+boost_price  F                  fit    1.4s  mismatch_vs_saved 360
+boost_price  tuned_F            fit    0.9s  mismatch_vs_saved 0
+boost_demand drop_F_qld_price   fit    1.6s  mismatch_vs_saved 0
+boost_demand C                  fit    1.6s  mismatch_vs_saved 17520
+boost_demand tuned_C            fit    1.1s  mismatch_vs_saved 17520
+wrote /work/results/price_hgbc/selfcheck/xplat/xplat_linux-amd64_run1.json in 18.0 s
+boost_price  tuned_C            fit    1.1s  mismatch_vs_saved 157
+boost_price  tuned_CR           fit    1.8s  mismatch_vs_saved 0
+boost_price  C                  fit    1.6s  mismatch_vs_saved 478
+boost_price  CR                 fit    3.5s  mismatch_vs_saved 0
+boost_price  CW                 fit    1.4s  mismatch_vs_saved 305
+boost_price  tuned_CW           fit    3.1s  mismatch_vs_saved 0
+boost_price  F                  fit    3.9s  mismatch_vs_saved 360
+boost_price  tuned_F            fit    4.7s  mismatch_vs_saved 0
+boost_demand drop_F_qld_price   fit    3.3s  mismatch_vs_saved 0
+boost_demand C                  fit    2.2s  mismatch_vs_saved 17520
+boost_demand tuned_C            fit    3.1s  mismatch_vs_saved 17520
+wrote /work/results/price_hgbc/selfcheck/xplat/xplat_linux-amd64_run2.json in 32.1 s
+Linux-7.0.12-linuxkit-x86_64-with-glibc2.36 | x86_64 | VirtualApple @ 2.50GHz | py 3.11.13
+prefix matches run.json: True | BalAcc 79.18680 (group 79.29988) | mismatches vs saved 157
+done amd64
+bash src/price_hgbc/run_xplat_docker.sh amd64  0.16s user 0.18s system 0% cpu 4:57.81 total
+script rc=0
+## 19:08:08 run_xplat_trees_docker.sh amd64
+wrote /work/results/price_hgbc/selfcheck/xplat/trees_linux-amd64.npz trees 100 nodes 2900
+done trees amd64
+trees amd64 rc=0
+## 19:12:34 run_xplat_trees_docker.sh arm64
+wrote /work/results/price_hgbc/selfcheck/xplat/trees_linux-arm64.npz trees 100 nodes 2900
+done trees arm64
+trees arm64 rc=0
+## 19:17:42 containers after:
+app-db-1 pgvector/pgvector:pg16 Exited (0) 4 weeks ago

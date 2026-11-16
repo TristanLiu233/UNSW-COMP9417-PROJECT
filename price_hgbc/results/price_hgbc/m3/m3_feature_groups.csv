@@ -1,0 +1,19 @@
+feature,group,group_zh,ref_order,single_column_note
+slot_sin,slot,时段编码,0,sin/cos pair
+slot_cos,slot,时段编码,1,sin/cos pair
+season_sin,season,季节编码,2,sin/cos pair
+season_cos,season,季节编码,3,sin/cos pair
+weekend,weekday,星期,4,"one-hot / redundant with weekday_5,6"
+weekday_0,weekday,星期,5,one-hot
+weekday_1,weekday,星期,6,one-hot
+weekday_2,weekday,星期,7,one-hot
+weekday_3,weekday,星期,8,one-hot
+weekday_4,weekday,星期,9,one-hot
+weekday_5,weekday,星期,10,one-hot
+weekday_6,weekday,星期,11,one-hot
+nsw_demand_lag1,demand_lag,需求滞后,12,
+nsw_price_lag1,price_lag,电价滞后,13,linear: lag1_price_gap + prev_price_mean
+nsw_demand_lag7,demand_lag,需求滞后,14,
+nsw_price_lag7,price_lag,电价滞后,15,
+prev_price_mean,threshold_gap,阈值与价差,16,linear: nsw_price_lag1 - lag1_price_gap
+lag1_price_gap,threshold_gap,阈值与价差,17,linear: = nsw_price_lag1 - prev_price_mean

@@ -1,0 +1,20 @@
+{
+ "reads": [
+  {
+   "file": "results/price_hgbc/official/boost_price_ref.json",
+   "kind": "json",
+   "max_timestamp": "n/a"
+  },
+  {
+   "file": "results/price_hgbc/official/preds_2014.parquet",
+   "kind": "parquet",
+   "max_timestamp": "2015-01-01 00:00:00"
+  },
+  {
+   "file": "comp9417_project_kit/data/nem_weather_halfhourly_2010_2026.csv",
+   "kind": "csv via P1 load_study",
+   "max_timestamp": "2015-01-01 00:00:00"
+  }
+ ],
+ "latest_timestamp_read": "2015-01-01 00:00:00"
+}

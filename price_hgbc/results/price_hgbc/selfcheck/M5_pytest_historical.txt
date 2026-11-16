@@ -1,0 +1,64 @@
+$ pytest tests/price_hgbc -q -m "historical_repro"
+Wed Nov 11 22:56:37 AEDT 2026
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_________________ test_m1_reproduces_group_balacc_within_0_01 __________________
+
+    @pytest.mark.historical_repro
+    def test_m1_reproduces_group_balacc_within_0_01():
+        bal, _ = main(random_state=0)
+>       assert abs(bal - GROUP_BALACC) <= 0.01
+E       assert 0.1130869117736637 <= 0.01
+E        +  where 0.1130869117736637 = abs((79.1867969333506 - 79.29988384512427))
+
+tests/price_hgbc/test_m1_gate.py:17: AssertionError
+----------------------------- Captured stdout call -----------------------------
+platform: macOS-26.6.2-arm64-arm-64bit arm64 python 3.11.8 sklearn 1.9.1 numpy 2.4.6
+BalAcc 79.18680 (group 79.29988, diff -0.11309)  Acc 79.10959 (group 79.21804)  row mismatches vs saved: 157
+________________ test_inputs_identical_across_all_envs_and_runs ________________
+
+    @pytest.mark.historical_repro
+    def test_inputs_identical_across_all_envs_and_runs():
+        ref = _run("macos-arm64", 1)["inputs"]
+        for env in ENVS:
+            for k in (1, 2):
+>               assert _run(env, k)["inputs"] == ref, (env, k)
+E               AssertionError: ('linux-arm64', 1)
+E               assert {'prefix_rows...n', ...], ...} == {'prefix_rows...n', ...], ...}
+E                 
+E                 Omitting 6 identical items, use -vv to show
+E                 Differing items:
+E                 {'X_train_sha256': 'c650c57c8fc3a9ce070d655ca2cdc6b573d43ee13da462c331c623f97a2f7b33'} != {'X_train_sha256': '2a420e4ee998eb092d02aa26fd9b25dab9596aeaa5bba8fe0aeaf25cc7d74880'}
+E                 {'X_valid_sha256': '0658a5896a934f50143d6fbcf554faa56013656552388f9bc5d94c5c5eed68c8'} != {'X_valid_sha256': 'ac248ec339d150e614516c1044591ca58fedf95393a16d554f577b69eae6149f'}
+E                 {'X_core18_train_sha256': '48eb3b3b6f921ee9979509b9b7b3b619eda511e802855a1618b91d7034ce8680'} != {'X_core18_train_sha256': '2f5b8f2a8d3e4cd44d662200e9854f54d00f0de99...
+E                 
+E                 ...Full output truncated, use '-vv' to show
+
+tests/price_hgbc/test_m1_xplat.py:59: AssertionError
+_______ test_tuned_c_macos_vs_linux_differ_only_by_8_one_ulp_thresholds ________
+
+    @pytest.mark.historical_repro
+    def test_tuned_c_macos_vs_linux_differ_only_by_8_one_ulp_thresholds():
+        import numpy as np
+        A = np.load(os.path.join(XDIR, "trees_macos-arm64.npz"))
+        for other in ("linux-arm64", "linux-amd64"):
+            B = np.load(os.path.join(XDIR, f"trees_{other}.npz"))
+            assert np.array_equal(A["offsets"], B["offsets"]) and len(A["offsets"]) - 1 == 100
+            for f in ("feature_idx", "left", "right", "is_leaf", "missing_go_to_left", "value", "gain", "count"):
+                assert np.array_equal(A["node_" + f], B["node_" + f]), f
+            a, b = A["node_num_threshold"], B["node_num_threshold"]
+            d = np.flatnonzero(a != b)
+            assert len(d) == 8
+            assert np.abs(a[d].view(np.int64) - b[d].view(np.int64)).max() == 1
+>           assert set(A["columns"][A["node_feature_idx"][d]]) <= {"season_sin", "season_cos"}
+E           AssertionError: assert {np.str_('sea..._('slot_cos')} <= {'season_cos', 'season_sin'}
+E             
+E             Extra items in the left set:
+E             np.str_('slot_cos')
+
+tests/price_hgbc/test_m1_xplat.py:153: AssertionError
+=========================== short test summary info ============================
+FAILED tests/price_hgbc/test_m1_gate.py::test_m1_reproduces_group_balacc_within_0_01
+FAILED tests/price_hgbc/test_m1_xplat.py::test_inputs_identical_across_all_envs_and_runs
+FAILED tests/price_hgbc/test_m1_xplat.py::test_tuned_c_macos_vs_linux_differ_only_by_8_one_ulp_thresholds
+3 failed, 288 deselected, 9 warnings in 3.45s

@@ -1,0 +1,42 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.8, pytest-9.2.0, pluggy-1.7.0 -- /Users/tristanliu/Documents/MyProject/9417/.venv/bin/python
+rootdir: /Users/tristanliu/Documents/MyProject/9417
+plugins: platformdirs-4.14.5, anyio-4.16.0
+collecting ... collected 28 items
+
+tests/price_hgbc/test_m0.py::test_python_is_311 PASSED                   [  3%]
+tests/price_hgbc/test_m0.py::test_requirements_parsed PASSED             [  7%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[numpy-2.4.6] PASSED [ 10%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[pandas-3.1.0] PASSED [ 14%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[scipy-1.17.1] PASSED [ 17%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[scikit-learn-1.9.1] PASSED [ 21%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[xgboost-3.2.0] PASSED [ 25%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[lightgbm-4.7.0] PASSED [ 28%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[statsmodels-0.15.0] PASSED [ 32%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[pyarrow-26.0.0] PASSED [ 35%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[joblib-1.6.0] PASSED [ 39%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[holidays-0.107] PASSED [ 42%]
+tests/price_hgbc/test_m0.py::test_m0_check_exit_codes_zero PASSED        [ 46%]
+tests/price_hgbc/test_m0.py::test_m0_check_14_ok_0_fail PASSED           [ 50%]
+tests/price_hgbc/test_m0.py::test_m0_check_kit_untouched PASSED          [ 53%]
+tests/price_hgbc/test_m0.py::test_baseline_balacc_2014[b1-73.99] PASSED  [ 57%]
+tests/price_hgbc/test_m0.py::test_baseline_balacc_2014[b7-74.28] PASSED  [ 60%]
+tests/price_hgbc/test_m0.py::test_baseline_matches_sklearn[b1] PASSED    [ 64%]
+tests/price_hgbc/test_m0.py::test_baseline_matches_sklearn[b7] PASSED    [ 67%]
+tests/price_hgbc/test_m0.py::test_baseline_covers_all_2014 PASSED        [ 71%]
+tests/price_hgbc/test_m0.py::test_day_matches_dayahead PASSED            [ 75%]
+tests/price_hgbc/test_m0.py::test_each_complete_day_has_48_unique_periods PASSED [ 78%]
+tests/price_hgbc/test_m0.py::test_period_consistent_with_offset PASSED   [ 82%]
+tests/price_hgbc/test_m0.py::test_midnight_row_belongs_to_previous_day PASSED [ 85%]
+tests/price_hgbc/test_m0.py::test_no_incomplete_days PASSED              [ 89%]
+tests/price_hgbc/test_m0.py::test_index_sorted_unique PASSED             [ 92%]
+tests/price_hgbc/test_m0.py::test_year_splits_chronological_and_disjoint PASSED [ 96%]
+tests/price_hgbc/test_m0.py::test_starter_notebook_runs_in_venv PASSED   [100%]
+
+============================= slowest 5 durations ==============================
+5.96s setup    tests/price_hgbc/test_m0.py::test_baseline_balacc_2014[b1-73.99]
+4.23s call     tests/price_hgbc/test_m0.py::test_starter_notebook_runs_in_venv
+0.02s call     tests/price_hgbc/test_m0.py::test_year_splits_chronological_and_disjoint
+0.02s setup    tests/price_hgbc/test_m0.py::test_day_matches_dayahead
+0.02s call     tests/price_hgbc/test_m0.py::test_each_complete_day_has_48_unique_periods
+============================= 28 passed in 10.65s ==============================

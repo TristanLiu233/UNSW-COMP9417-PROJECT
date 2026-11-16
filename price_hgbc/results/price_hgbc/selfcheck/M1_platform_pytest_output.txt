@@ -1,0 +1,48 @@
+### collection: -m historical_repro
+tests/price_hgbc/test_m1_gate.py::test_m1_reproduces_group_balacc_within_0_01
+tests/price_hgbc/test_m1_xplat.py::test_inputs_identical_across_all_envs_and_runs
+2/75 tests collected (73 deselected) in 1.49s
+### test_m1_xplat.py (all, incl. historical_repro-tagged)
+E               AssertionError: ('linux-arm64', 1)
+E               assert {'prefix_rows...n', ...], ...} == {'prefix_rows...n', ...], ...}
+E                 
+E                 Omitting 6 identical items, use -vv to show
+E                 Differing items:
+E                 {'X_valid_sha256': '0658a5896a934f50143d6fbcf554faa56013656552388f9bc5d94c5c5eed68c8'} != {'X_valid_sha256': 'ac248ec339d150e614516c1044591ca58fedf95393a16d554f577b69eae6149f'}
+E                 {'X_train_sha256': 'c650c57c8fc3a9ce070d655ca2cdc6b573d43ee13da462c331c623f97a2f7b33'} != {'X_train_sha256': '2a420e4ee998eb092d02aa26fd9b25dab9596aeaa5bba8fe0aeaf25cc7d74880'}
+E                 {'X_core18_train_sha256': '48eb3b3b6f921ee9979509b9b7b3b619eda511e802855a1618b91d7034ce8680'} != {'X_core18_train_sha256': '2f5b8f2a8d3e4cd44d662200e9854f54d00f0de99...
+E                 
+E                 ...Full output truncated, use '-vv' to show
+E           AssertionError: assert {np.str_('sea..._('slot_cos')} <= {'season_cos', 'season_sin'}
+E             
+E             Extra items in the left set:
+E             np.str_('slot_cos')
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[1-macos-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[1-linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[1-linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[2-macos-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[2-linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_run_artifact_present[2-linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_environment_is_what_it_claims[macos-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_environment_is_what_it_claims[linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_environment_is_what_it_claims[linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_container_installed_exactly_the_pins[linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_container_installed_exactly_the_pins[linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_hgb_params_identical_across_envs
+PASSED tests/price_hgbc/test_m1_xplat.py::test_two_repetitions_bitwise_identical[macos-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_two_repetitions_bitwise_identical[linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_two_repetitions_bitwise_identical[linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_random_state_0_equals_17[macos-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_random_state_0_equals_17[linux-arm64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_random_state_0_equals_17[linux-amd64]
+PASSED tests/price_hgbc/test_m1_xplat.py::test_macos_matches_earlier_evidence
+PASSED tests/price_hgbc/test_m1_xplat.py::test_comparison_table_consistent_with_runs
+PASSED tests/price_hgbc/test_m1_xplat.py::test_data_and_labels_identical_across_all_envs
+PASSED tests/price_hgbc/test_m1_xplat.py::test_linux_arm64_and_amd64_bit_identical
+PASSED tests/price_hgbc/test_m1_xplat.py::test_prediction_labels_identical_across_all_envs
+PASSED tests/price_hgbc/test_m1_xplat.py::test_no_env_reproduces_historical_tuned_c
+PASSED tests/price_hgbc/test_m1_xplat.py::test_docker_state_restored
+SKIPPED [2] tests/price_hgbc/test_m1_xplat.py:98: opt-in: needs Docker Desktop running; set RUN_DOCKER_XPLAT=1
+FAILED tests/price_hgbc/test_m1_xplat.py::test_inputs_identical_across_all_envs_and_runs
+FAILED tests/price_hgbc/test_m1_xplat.py::test_tuned_c_macos_vs_linux_differ_only_by_8_one_ulp_thresholds
+2 failed, 25 passed, 2 skipped in 0.38s

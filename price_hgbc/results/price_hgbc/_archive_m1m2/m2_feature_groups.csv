@@ -1,0 +1,27 @@
+order,feature,group,source,date,categorical,allowed_at_prediction,in_M1,in_M1_ext
+0,up_lag1,Price lag,src/price_hgbc/features_simple.py (M1),D (same period t) and P̄(D),False,True,True,True
+1,up_lag7,Price lag,src/price_hgbc/features_simple.py (M1),D-6 (same period t) and P̄(D),False,True,True,True
+2,syd_temp,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+3,syd_rh,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+4,syd_cloud,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+5,syd_solar,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+6,mel_temp,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+7,mel_rh,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+8,mel_cloud,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+9,mel_solar,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+10,bne_temp,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+11,bne_rh,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+12,bne_cloud,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+13,bne_solar,Weather,src/price_hgbc/features_simple.py (M1),"D+1 (period t), released weather",False,True,True,True
+14,period,Calendar,src/price_hgbc/features_simple.py (M1),D+1 (period t),True,True,True,True
+15,weekday,Calendar,src/price_hgbc/features_simple.py (M1),D+1,True,True,True,True
+16,price_gap_lag1,Price lag,src/price_hgbc/features_simple.py (M1),D (same period t) and P̄(D),False,True,True,True
+17,price_gap_lag7,Price lag,src/price_hgbc/features_simple.py (M1),D-6 (same period t) and P̄(D),False,True,True,True
+18,prev_price_max,Price distribution,src/price_hgbc/extra_features.py (M2),D (all 48 periods),False,True,False,True
+19,prev_price_std,Price distribution,src/price_hgbc/extra_features.py (M2),D (all 48 periods),False,True,False,True
+20,prev_neg_share,Price distribution,src/price_hgbc/extra_features.py (M2),D (all 48 periods),False,True,False,True
+21,prev_spike_ratio,Price spike,src/price_hgbc/extra_features.py (M2),D (all 48 periods),False,True,False,True
+22,prev_n_gt300,Price spike,src/price_hgbc/extra_features.py (M2),D (all 48 periods),False,True,False,True
+23,prev_n_gt1000,Price spike,src/price_hgbc/extra_features.py (M2),D (all 48 periods),False,True,False,True
+24,syd_temp_diff,Weather,src/price_hgbc/extra_features.py (M2),D+1 and D (period t),False,True,False,True
+25,is_holiday,Calendar,src/price_hgbc/extra_features.py (M2),"D+1 (holidays 0.107, AU/NSW public)",False,True,False,True

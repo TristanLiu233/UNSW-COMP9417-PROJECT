@@ -1,0 +1,49 @@
+{
+ "n_boot": 1000,
+ "seed": 0,
+ "n_days": 365,
+ "boot_index_sha256": "680dccdd19f59655c199a0baf0e5e1bbfd9b45d06c37f91603006cf6b99cc39f",
+ "train": {
+  "first_day": "2010-01-29",
+  "last_day": "2013-12-31",
+  "rows": 68784
+ },
+ "valid": {
+  "first_day": "2014-01-01",
+  "last_day": "2014-12-31",
+  "rows": 17520
+ },
+ "params": {
+  "categorical_features": "from_dtype",
+  "class_weight": null,
+  "early_stopping": false,
+  "interaction_cst": null,
+  "l2_regularization": 0.0,
+  "learning_rate": 0.1,
+  "loss": "log_loss",
+  "max_bins": 255,
+  "max_depth": null,
+  "max_features": 1.0,
+  "max_iter": 100,
+  "max_leaf_nodes": 15,
+  "min_samples_leaf": 20,
+  "monotonic_cst": null,
+  "n_iter_no_change": 10,
+  "random_state": 17,
+  "scoring": "loss",
+  "tol": 1e-07,
+  "validation_fraction": 0.1,
+  "verbose": 0,
+  "warm_start": false
+ },
+ "tau": 0.45,
+ "p1_thresholds_for_optimistic": [
+  0.4,
+  0.45,
+  0.5,
+  0.55,
+  0.6
+ ],
+ "full_equals_official_parquet": true,
+ "note": "explanatory only - not used to re-select the model"
+}

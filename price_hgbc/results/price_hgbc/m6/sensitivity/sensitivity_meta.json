@@ -1,0 +1,11 @@
+{
+ "prereg_sha256": "0b71324010f56adfdf4088318b084312646c013b35fd3cdb2415589172fa13cc",
+ "calibration_sha256_before_replay": "cc9605b429188bf258a769151c0019dbcf2ce424ea44c13eea0cfcfc8732012e",
+ "h_for_S3K": 5,
+ "boot_index_sha256": "6c4d7886e20cb959d0fa82c6377ed93b798969cd62910dcff3d413cd3af214db",
+ "dev_period": [
+  "2015-01-01",
+  "2024-12-31"
+ ],
+ "note": "exploratory sensitivity; official M6 S3 unchanged; 2025-2026 not scored"
+}

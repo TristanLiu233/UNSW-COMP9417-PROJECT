@@ -1,0 +1,20 @@
+{
+ "boundaries": "<=300, (300,1000], >1000 $/MWh on max NSW price of day D = target - 1",
+ "label_only_period": [
+  "2010-01-02",
+  "2014-12-31"
+ ],
+ "excluded_label_only": [
+  "2010-01-01 (no day D in the file)"
+ ],
+ "claim_9_7pct": {
+  "source": "00_overview/explore_output.txt \u00a76b, computed over 2010-2026 (192 days)",
+  "this_check_period": "2010-01-02 .. 2014-12-31 (2015+ not read in M3)",
+  "high_group_days": 21,
+  "high_group_class1_share": 5.158730158730159,
+  "other_days_class1_share": 46.98240022172949,
+  "matches_9_7_at_0_1pp": false
+ },
+ "kit_convention": "BalAcc = mean recall over the classes present; with one class it is that class's recall",
+ "note": "explanatory only - not used to re-select the model"
+}

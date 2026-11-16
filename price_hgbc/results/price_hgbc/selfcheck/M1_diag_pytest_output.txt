@@ -1,0 +1,115 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.11.8, pytest-9.2.0, pluggy-1.7.0 -- /Users/tristanliu/Documents/MyProject/9417/.venv/bin/python
+rootdir: /Users/tristanliu/Documents/MyProject/9417
+plugins: platformdirs-4.14.5, anyio-4.16.0
+collecting ... collected 44 items
+
+tests/price_hgbc/test_m0.py::test_python_is_311 PASSED                   [  2%]
+tests/price_hgbc/test_m0.py::test_requirements_parsed PASSED             [  4%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[numpy-2.4.6] PASSED [  6%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[pandas-3.1.0] PASSED [  9%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[scipy-1.17.1] PASSED [ 11%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[scikit-learn-1.9.1] PASSED [ 13%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[xgboost-3.2.0] PASSED [ 15%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[lightgbm-4.7.0] PASSED [ 18%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[statsmodels-0.15.0] PASSED [ 20%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[pyarrow-26.0.0] PASSED [ 22%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[joblib-1.6.0] PASSED [ 25%]
+tests/price_hgbc/test_m0.py::test_package_version_pinned[holidays-0.107] PASSED [ 27%]
+tests/price_hgbc/test_m0.py::test_m0_check_exit_codes_zero PASSED        [ 29%]
+tests/price_hgbc/test_m0.py::test_m0_check_14_ok_0_fail PASSED           [ 31%]
+tests/price_hgbc/test_m0.py::test_m0_check_kit_untouched PASSED          [ 34%]
+tests/price_hgbc/test_m0.py::test_baseline_balacc_2014[b1-73.99] PASSED  [ 36%]
+tests/price_hgbc/test_m0.py::test_baseline_balacc_2014[b7-74.28] PASSED  [ 38%]
+tests/price_hgbc/test_m0.py::test_baseline_matches_sklearn[b1] PASSED    [ 40%]
+tests/price_hgbc/test_m0.py::test_baseline_matches_sklearn[b7] PASSED    [ 43%]
+tests/price_hgbc/test_m0.py::test_baseline_covers_all_2014 PASSED        [ 45%]
+tests/price_hgbc/test_m0.py::test_day_matches_dayahead PASSED            [ 47%]
+tests/price_hgbc/test_m0.py::test_each_complete_day_has_48_unique_periods PASSED [ 50%]
+tests/price_hgbc/test_m0.py::test_period_consistent_with_offset PASSED   [ 52%]
+tests/price_hgbc/test_m0.py::test_midnight_row_belongs_to_previous_day PASSED [ 54%]
+tests/price_hgbc/test_m0.py::test_no_incomplete_days PASSED              [ 56%]
+tests/price_hgbc/test_m0.py::test_index_sorted_unique PASSED             [ 59%]
+tests/price_hgbc/test_m0.py::test_year_splits_chronological_and_disjoint PASSED [ 61%]
+tests/price_hgbc/test_m0.py::test_starter_notebook_runs_in_venv PASSED   [ 63%]
+tests/price_hgbc/test_m0.py::test_check_submission_rerun_live PASSED     [ 65%]
+tests/price_hgbc/test_m1_diag.py::test_saved_group_results_unchanged PASSED [ 68%]
+tests/price_hgbc/test_m1_diag.py::test_kit_matches_git_head PASSED       [ 70%]
+tests/price_hgbc/test_m1_diag.py::test_data_prefix_matches_run_json PASSED [ 72%]
+tests/price_hgbc/test_m1_diag.py::test_our_features_bitwise_equal_group_features PASSED [ 75%]
+tests/price_hgbc/test_m1_diag.py::test_group_saved_2014_truth_and_baseline_equal_ours PASSED [ 77%]
+tests/price_hgbc/test_m1_diag.py::test_no_exact_price_ties_2010_2014 PASSED [ 79%]
+tests/price_hgbc/test_m1_diag.py::test_model_params_match_group_spec PASSED [ 81%]
+tests/price_hgbc/test_m1_diag.py::test_random_state_has_no_effect PASSED [ 84%]
+tests/price_hgbc/test_m1_diag.py::test_fresh_processes_and_thread_counts_identical PASSED [ 86%]
+tests/price_hgbc/test_m1_diag.py::test_fingerprint_compare_detects_tree_divergence PASSED [ 88%]
+tests/price_hgbc/test_m1_diag.py::test_linear_tuned_c_reproduces_exactly[logistic] PASSED [ 90%]
+tests/price_hgbc/test_m1_diag.py::test_linear_tuned_c_reproduces_exactly[ridge] PASSED [ 93%]
+tests/price_hgbc/test_m1_diag.py::test_full_replay_matches_recorded_evidence PASSED [ 95%]
+tests/price_hgbc/test_m1_diag.py::test_hgb_invariant_to_row_order_and_1ulp_gradients PASSED [ 97%]
+tests/price_hgbc/test_m1_gate.py::test_m1_reproduces_group_balacc_within_0_01 FAILED [100%]
+
+=================================== FAILURES ===================================
+_________________ test_m1_reproduces_group_balacc_within_0_01 __________________
+
+    def test_m1_reproduces_group_balacc_within_0_01():
+        bal, _ = main(random_state=0)
+>       assert abs(bal - GROUP_BALACC) <= 0.01
+E       assert 0.1130869117736637 <= 0.01
+E        +  where 0.1130869117736637 = abs((79.1867969333506 - 79.29988384512427))
+
+tests/price_hgbc/test_m1_gate.py:11: AssertionError
+----------------------------- Captured stdout call -----------------------------
+platform: macOS-26.6.2-arm64-arm-64bit arm64 python 3.11.8 sklearn 1.9.1 numpy 2.4.6
+BalAcc 79.18680 (group 79.29988, diff -0.11309)  Acc 79.10959 (group 79.21804)  row mismatches vs saved: 157
+=============================== warnings summary ===============================
+tests/price_hgbc/test_m1_diag.py::test_data_prefix_matches_run_json
+tests/price_hgbc/test_m1_diag.py::test_random_state_has_no_effect
+tests/price_hgbc/test_m1_diag.py::test_random_state_has_no_effect
+tests/price_hgbc/test_m1_diag.py::test_linear_tuned_c_reproduces_exactly[logistic]
+tests/price_hgbc/test_m1_diag.py::test_linear_tuned_c_reproduces_exactly[ridge]
+  /Users/tristanliu/Documents/MyProject/9417/comp9417_project_kit/ablation/features.py:60: Pandas4Warning: DatetimeIndex.dayofyear is deprecated and will be removed in a future version. Use DatetimeIndex.day_of_year instead.
+    season_angle = 2 * np.pi * (days.dayofyear - 1) / np.where(days.is_leap_year, 366, 365)
+
+tests/price_hgbc/test_m1_diag.py::test_data_prefix_matches_run_json
+tests/price_hgbc/test_m1_diag.py::test_random_state_has_no_effect
+tests/price_hgbc/test_m1_diag.py::test_random_state_has_no_effect
+tests/price_hgbc/test_m1_diag.py::test_linear_tuned_c_reproduces_exactly[logistic]
+tests/price_hgbc/test_m1_diag.py::test_linear_tuned_c_reproduces_exactly[ridge]
+  /Users/tristanliu/Documents/MyProject/9417/comp9417_project_kit/ablation/features.py:63: Pandas4Warning: DatetimeIndex.dayofweek is deprecated and will be removed in a future version. Use DatetimeIndex.day_of_week instead.
+    "weekend": (days.dayofweek >= 5).astype(int)}
+
+tests/price_hgbc/test_m1_diag.py: 35 warnings
+  /Users/tristanliu/Documents/MyProject/9417/comp9417_project_kit/ablation/features.py:65: Pandas4Warning: DatetimeIndex.dayofweek is deprecated and will be removed in a future version. Use DatetimeIndex.day_of_week instead.
+    columns[f"weekday_{weekday}"] = (days.dayofweek == weekday).astype(int)
+
+tests/price_hgbc/test_m1_diag.py::test_our_features_bitwise_equal_group_features
+tests/price_hgbc/test_m1_diag.py::test_group_saved_2014_truth_and_baseline_equal_ours
+tests/price_hgbc/test_m1_gate.py::test_m1_reproduces_group_balacc_within_0_01
+  /Users/tristanliu/Documents/MyProject/9417/src/price_hgbc/features_simple.py:53: Pandas4Warning: DatetimeIndex.dayofyear is deprecated and will be removed in a future version. Use DatetimeIndex.day_of_year instead.
+    season_angle = 2 * np.pi * (days.dayofyear - 1) / np.where(days.is_leap_year, 366, 365)
+
+tests/price_hgbc/test_m1_diag.py::test_our_features_bitwise_equal_group_features
+tests/price_hgbc/test_m1_diag.py::test_group_saved_2014_truth_and_baseline_equal_ours
+tests/price_hgbc/test_m1_gate.py::test_m1_reproduces_group_balacc_within_0_01
+  /Users/tristanliu/Documents/MyProject/9417/src/price_hgbc/features_simple.py:56: Pandas4Warning: DatetimeIndex.dayofweek is deprecated and will be removed in a future version. Use DatetimeIndex.day_of_week instead.
+    "weekend": (days.dayofweek >= 5).astype(int)}
+
+tests/price_hgbc/test_m1_diag.py: 14 warnings
+tests/price_hgbc/test_m1_gate.py: 7 warnings
+  /Users/tristanliu/Documents/MyProject/9417/src/price_hgbc/features_simple.py:58: Pandas4Warning: DatetimeIndex.dayofweek is deprecated and will be removed in a future version. Use DatetimeIndex.day_of_week instead.
+    cols[f"weekday_{i}"] = (days.dayofweek == i).astype(int)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= slowest 8 durations ==============================
+165.56s call     tests/price_hgbc/test_m1_diag.py::test_full_replay_matches_recorded_evidence
+33.49s call     tests/price_hgbc/test_m1_diag.py::test_hgb_invariant_to_row_order_and_1ulp_gradients
+12.07s call     tests/price_hgbc/test_m1_diag.py::test_fresh_processes_and_thread_counts_identical
+8.92s call     tests/price_hgbc/test_m0.py::test_check_submission_rerun_live
+6.01s setup    tests/price_hgbc/test_m0.py::test_baseline_balacc_2014[b1-73.99]
+3.59s call     tests/price_hgbc/test_m0.py::test_starter_notebook_runs_in_venv
+3.24s call     tests/price_hgbc/test_m1_diag.py::test_no_exact_price_ties_2010_2014
+2.41s call     tests/price_hgbc/test_m1_diag.py::test_random_state_has_no_effect
+=========================== short test summary info ============================
+FAILED tests/price_hgbc/test_m1_gate.py::test_m1_reproduces_group_balacc_within_0_01
+============ 1 failed, 43 passed, 72 warnings in 243.18s (0:04:03) =============

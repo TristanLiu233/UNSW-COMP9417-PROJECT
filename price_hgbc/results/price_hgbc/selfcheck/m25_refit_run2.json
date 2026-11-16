@@ -1,0 +1,97 @@
+{
+ "params": {
+  "categorical_features": "from_dtype",
+  "class_weight": null,
+  "early_stopping": false,
+  "interaction_cst": null,
+  "l2_regularization": 0.0,
+  "learning_rate": 0.1,
+  "loss": "log_loss",
+  "max_bins": 255,
+  "max_depth": null,
+  "max_features": 1.0,
+  "max_iter": 100,
+  "max_leaf_nodes": 15,
+  "min_samples_leaf": 20,
+  "monotonic_cst": null,
+  "n_iter_no_change": 10,
+  "random_state": 17,
+  "scoring": "loss",
+  "tol": 1e-07,
+  "validation_fraction": 0.1,
+  "verbose": 0,
+  "warm_start": false
+ },
+ "features": [
+  "slot_sin",
+  "slot_cos",
+  "season_sin",
+  "season_cos",
+  "weekend",
+  "weekday_0",
+  "weekday_1",
+  "weekday_2",
+  "weekday_3",
+  "weekday_4",
+  "weekday_5",
+  "weekday_6",
+  "nsw_demand_lag1",
+  "nsw_price_lag1",
+  "nsw_demand_lag7",
+  "nsw_price_lag7",
+  "prev_price_mean",
+  "lag1_price_gap"
+ ],
+ "tau": 0.45,
+ "train": {
+  "first_day": "2010-01-29",
+  "last_day": "2013-12-31",
+  "rows": 68784
+ },
+ "valid": {
+  "first_day": "2014-01-01",
+  "last_day": "2014-12-31",
+  "rows": 17520
+ },
+ "metrics_2014": {
+  "Acc": 79.1095890410959,
+  "BalAcc": 79.1867969333506,
+  "recall_0": 76.38040217753583,
+  "recall_1": 81.99319168916539,
+  "tn": 6875,
+  "fp": 2126,
+  "fn": 1534,
+  "tp": 6985,
+  "n": 17520
+ },
+ "hashes": {
+  "X_train": "645efd28582fe727e80c59939ef42fcf6d3b3846fcfc4f4da7d597cbf6d20d83",
+  "y_train": "4f59813e0592095f1ec18a1d143a5f0a66f7e2c0ce416e542df2127e5fb499a7",
+  "X_valid": "0611ad393e97794eb69dd5cdbab2d020d5da7d408d069db0a9794a8280302aaa",
+  "y_valid": "6d09c55dbf734c6579e331bae3b42527a7d7427872e00797a2cb459bfc631288",
+  "proba_2014": "babd32857fd8e156adec3236db91122c51a20182f620f8e61a8487bcbe692ce3",
+  "pred_2014": "c26828a0e94e621509c629b9bb55646fe2d82524520eab4ec5235ee3d3f1ee9d"
+ },
+ "trees": {
+  "n_iter": 100,
+  "trees_sha256": "72e4f7a9e45cf6d1b83409a7e4daccc6d9b0b025ac34e4ab5670aea5df2b2d12"
+ },
+ "environment": {
+  "python": "3.11.8",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "versions": {
+   "numpy": "2.4.6",
+   "pandas": "3.1.0",
+   "scipy": "1.17.1",
+   "sklearn": "1.9.1",
+   "joblib": "1.6.0"
+  },
+  "threadpools": [
+   {
+    "internal_api": "openmp",
+    "num_threads": 8
+   }
+  ]
+ }
+}

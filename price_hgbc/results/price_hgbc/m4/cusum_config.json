@@ -1,0 +1,92 @@
+{
+ "error_definitions": {
+  "logloss": "mean over the 48 half-hours of day D of -[y log p + (1-y) log(1-p)], p clipped",
+  "misclass": "share of day D's 48 half-hours with 1[p >= tau] != y, tau = REF tau"
+ },
+ "logloss_clip": [
+  1e-06,
+  0.999999
+ ],
+ "k": 0.5,
+ "h_candidates": [
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  10
+ ],
+ "arl0_target_days": 730,
+ "schemes": {
+  "main": {
+   "error": "logloss",
+   "truncate": true,
+   "q99": 1.0494324087377636,
+   "mu0": 0.4434939030076151,
+   "sigma0": 0.19881467766062375,
+   "k": 0.5,
+   "h": 6,
+   "arl0_median": 912.5,
+   "arl0_q05": 456.25,
+   "arl0_q95": 3650.0,
+   "meets_target": true,
+   "role": "selected detector (log loss)"
+  },
+  "misclass": {
+   "error": "misclass",
+   "truncate": true,
+   "q99": 0.5625,
+   "mu0": 0.20833333333333331,
+   "sigma0": 0.1350507524551631,
+   "k": 0.5,
+   "h": 6,
+   "arl0_median": 730.0,
+   "arl0_q05": 405.55555555555554,
+   "arl0_q95": 1825.0,
+   "meets_target": true,
+   "role": "comparison only (not used)"
+  }
+ },
+ "timing": "update S_D at the end of day D; after an alarm the retrained model forecasts from D+1",
+ "ref_update_options": {
+  "A": "keep the 2014 mu0, sigma0, q99 after every retrain",
+  "B": "re-estimate q99, mu0, sigma0 from the new model's out-of-sample daily errors on the last 12 months of its training window (inner fit inside the same retraining)"
+ },
+ "ref_update": "A",
+ "ref_update_decision": {
+  "choice": "A",
+  "decided_by": "user",
+  "recorded_in": "results/price_hgbc/selfcheck/M4.md section 8",
+  "note": "after a retrain keep mu0, sigma0, q99 from 2014 (h = 6 calibration stays as validated)"
+ },
+ "bootstrap": {
+  "method": "weekly block bootstrap (full Mon-Sun weeks of 2014)",
+  "block_days": 7,
+  "series_days": 3650,
+  "replicates": 1000,
+  "seed": 0,
+  "arl_per_replicate": "3650 / n_alarms",
+  "blocks": 51,
+  "block_first_day": "2014-01-06",
+  "block_last_day": "2014-12-28",
+  "boot_matrix_sha256": "f479ed9e670d8ffb68558af54fb40461e500ce75a5d9d974ff81c25692f5e2b8"
+ },
+ "data_period": {
+  "calibration": "2014 (out-of-sample predictions of REF)",
+  "latest_timestamp_read": "2015-01-01 00:00"
+ },
+ "ref": {
+  "path": "results/price_hgbc/official/boost_price_ref.json",
+  "sha256": "06b022774a10dad545dacb9a73d910a73eccd37d1ebc14d3f605d6e9ff210725",
+  "preds_2014_sha256": "b4c9890d0149d69c902dcc10685db82c7b2d19d253a57a72ce0483a1f93c0c29",
+  "tau": 0.45
+ },
+ "code_commit": null,
+ "code_commit_note": "project root is not a git repository; code identified by SHA-256 below",
+ "code_sha256": {
+  "src/price_hgbc/cusum.py": "25756c7b1adeb4b3ff548e4d46d90d4321159992fd097438c9598012c7878d5e",
+  "src/price_hgbc/m4.py": "f8e73c011784836eb54ed9fc2487fa6613627f0a59efd10abb41d1e27b6d9a46"
+ },
+ "design_sha256": "78fe92dbd3f1cdbe657ab8faacd289126a7a690ca4ddd34f71f15590c884f654"
+}

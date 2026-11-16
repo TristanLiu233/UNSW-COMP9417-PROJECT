@@ -1,0 +1,11 @@
+{
+  "n_code_cells_kit": 6,
+  "n_error_outputs": 0,
+  "probe": {
+    "executable": "/Users/tristanliu/Documents/MyProject/9417/.venv/bin/python",
+    "python": "3.11.8",
+    "numpy": "2.4.6",
+    "pandas": "3.1.0",
+    "sklearn": "1.9.1"
+  }
+}

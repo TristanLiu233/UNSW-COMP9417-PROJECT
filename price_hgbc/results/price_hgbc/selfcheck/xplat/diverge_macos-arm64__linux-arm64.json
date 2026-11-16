@@ -1,0 +1,105 @@
+{
+ "a": "macos-arm64",
+ "b": "linux-arm64",
+ "bin_edges_identical": false,
+ "baseline_identical": true,
+ "n_trees": [
+  100,
+  100
+ ],
+ "trees_identical": false,
+ "first_tree": 15,
+ "first_node": 26,
+ "differing_fields": [
+  "bin_threshold"
+ ],
+ "kind": "split (feature/threshold/structure)",
+ "node_a": {
+  "feature_idx": 3,
+  "bin_threshold": 213,
+  "num_threshold": 0.8528643314021598,
+  "left": 27,
+  "right": 28,
+  "is_leaf": 0,
+  "missing_go_to_left": 1,
+  "value": 0.03645235000591955,
+  "gain": 98.05559243516036,
+  "count": 3537,
+  "depth": 5
+ },
+ "node_b": {
+  "feature_idx": 3,
+  "bin_threshold": 214,
+  "num_threshold": 0.8528643314021598,
+  "left": 27,
+  "right": 28,
+  "is_leaf": 0,
+  "missing_go_to_left": 1,
+  "value": 0.03645235000591955,
+  "gain": 98.05559243516036,
+  "count": 3537,
+  "depth": 5
+ },
+ "identical_trees_before": 15,
+ "parent_node": 24,
+ "value_diff_ulps_at_node": null,
+ "proba": {
+  "identical": false,
+  "max_abs_diff": 2.220446049250313e-16,
+  "median_abs_diff": 0.0,
+  "rows_differing": 10,
+  "median_abs_diff_among_differing": 1.0408340855860843e-17,
+  "labels_differing_at_0.45": 0,
+  "flips_a1_b0": 0,
+  "flips_a0_b1": 0
+ },
+ "split_candidates": {
+  "note": "recomputed in macos-arm64; numpy float64 sums of float32 g/h (approximates sklearn's histograms)",
+  "node_samples": 3537,
+  "top5": [
+   {
+    "gain": 98.05559243516036,
+    "feature": "season_cos",
+    "feature_idx": 3,
+    "bin": 213
+   },
+   {
+    "gain": 93.67489672492279,
+    "feature": "nsw_price_lag7",
+    "feature_idx": 15,
+    "bin": 231
+   },
+   {
+    "gain": 91.77570905356313,
+    "feature": "nsw_price_lag7",
+    "feature_idx": 15,
+    "bin": 234
+   },
+   {
+    "gain": 91.5181398942596,
+    "feature": "nsw_price_lag7",
+    "feature_idx": 15,
+    "bin": 233
+   },
+   {
+    "gain": 88.36109873582097,
+    "feature": "nsw_price_lag7",
+    "feature_idx": 15,
+    "bin": 236
+   }
+  ],
+  "choice_a": {
+   "feature": "season_cos",
+   "bin": 213,
+   "rank": 0,
+   "gain": 98.05559243516036
+  },
+  "choice_b": {
+   "feature": "season_cos",
+   "bin": 214,
+   "rank": 26,
+   "gain": 72.06653241335374
+  },
+  "relative_gain_gap": 0.26504413849716923
+ }
+}

@@ -1,0 +1,13 @@
+{
+ "gain_pp": 0.4819631904918822,
+ "diff_ci95": [
+  -0.20032142526860425,
+  1.2319546463207944
+ ],
+ "rule": "gain >= 0.5 pp and CI excludes 0",
+ "winner": "M1",
+ "n_days": 365,
+ "n_boot": 1000,
+ "seed": 0,
+ "boot_index_sha256": "680dccdd19f59655c199a0baf0e5e1bbfd9b45d06c37f91603006cf6b99cc39f"
+}

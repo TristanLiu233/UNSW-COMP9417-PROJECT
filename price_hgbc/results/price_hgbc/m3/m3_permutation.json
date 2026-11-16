@@ -1,0 +1,11 @@
+{
+ "baseline_BalAcc": 79.1867969333506,
+ "REF_BalAcc": 79.1867969333506,
+ "tau": 0.45,
+ "n_repeats": 10,
+ "random_state": 0,
+ "rows": 17520,
+ "refit": false,
+ "model_file_sha256": "9206389cfbebe6436550875273c172d5557ddb7e781252c06899281a38b128bf",
+ "note": "explanatory only - not used to re-select the model"
+}

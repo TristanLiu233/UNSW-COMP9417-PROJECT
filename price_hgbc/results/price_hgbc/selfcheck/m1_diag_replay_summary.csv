@@ -1,0 +1,5 @@
+model,configs,exact,exact_without_day_type,configs_without_day_type
+boost_demand,87,1,1,86
+boost_price,85,28,28,85
+logistic,85,85,85,85
+ridge,83,83,82,82
