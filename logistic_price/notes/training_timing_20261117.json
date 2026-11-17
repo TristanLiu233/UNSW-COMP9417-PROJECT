@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "started_at_australia_sydney": "2026-11-17T17:24:03.914694+11:00",
+  "source_commit": "c23c95956eea95dd56e311ccb22a25fdbf2b5457",
+  "wall_seconds": 3.3458457079250365,
+  "timed_runs": 1,
+  "timing_scope": "Fresh Python CLI process: interpreter/imports, CSV prefix read, features, nested tau search, full-prefix refit, audit hash, artifact writes and stdout capture; excludes comparison checks afterwards.",
+  "cache_caveat": "OS filesystem cache not cleared; one local timing, not a cross-machine performance guarantee.",
+  "environment": {
+    "python": "3.11.18",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "architecture": "arm64",
+    "cpu": "Apple M2",
+    "logical_cpus": 8,
+    "memory_bytes": 17179869184,
+    "fit_thread_limit": 1,
+    "packages": {
+      "numpy": "2.4.6",
+      "pandas": "3.1.0",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1",
+      "joblib": "1.6.0",
+      "threadpoolctl": "3.8.0",
+      "holidays": "0.107"
+    }
+  },
+  "reproduction_command": "python -m logistic_price.final_training --data /path/to/nem_weather_halfhourly_2010_2026.csv --cutoff 2026-10-31 --output /path/to/NEW_DIRECTORY",
+  "data_sha256": "c13711002906140eaf7cc67c1ce17a49facd359cf3d1a84722aaa3ccd647752c",
+  "training_source_sha256": "6f9c7c493559706b346b36c9e08ce438b5e6e51894b71c936a6ccf88a2fb1246",
+  "artifact_sha256": "7e898b2aebd146b83f40df869a9ffbc728bc447ca22970e872b51b103131dd50",
+  "reference_artifact_sha256": "7e898b2aebd146b83f40df869a9ffbc728bc447ca22970e872b51b103131dd50",
+  "train_rows": 293760,
+  "tau": 0.49,
+  "folds": [
+    {
+      "train_start": "2010-01-29",
+      "train_end": "2025-10-31",
+      "validation_start": "2025-11-01",
+      "validation_end": "2026-10-31",
+      "train_rows": 276240,
+      "validation_rows": 17520
+    }
+  ],
+  "threshold_candidates": 36,
+  "verification": {
+    "reference": "2026-11-16 price-nested-tau-20261031 local artifact",
+    "training_audit": "exact_equal",
+    "model_arrays": {
+      "standardscaler.mean_": "exact_equal",
+      "standardscaler.scale_": "exact_equal",
+      "standardscaler.var_": "exact_equal",
+      "standardscaler.n_samples_seen_": "exact_equal",
+      "logisticregression.coef_": "exact_equal",
+      "logisticregression.intercept_": "exact_equal",
+      "logisticregression.classes_": "exact_equal",
+      "logisticregression.n_iter_": "exact_equal"
+    },
+    "daily_predictions": "exact_equal",
+    "days": 14,
+    "slots": 672,
+    "dates": [
+      "2026-10-18",
+      "2026-10-31"
+    ]
+  },
+  "limitations": [
+    "Price component only; not full two-target package timing.",
+    "The 2025-2026 data were already accessed on 2026-11-16, before the group schedule of 2026-11-18. This rerun measures timing/reproducibility only; it is not an independent holdout evaluation or a new strategy selection."
+  ]
+}
