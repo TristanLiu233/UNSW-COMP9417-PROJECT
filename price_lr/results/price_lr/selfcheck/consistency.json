@@ -1,0 +1,159 @@
+{
+ "scheduled": [
+  {
+   "strategy": "S1",
+   "model_id": "S1_r1_2016-12-31",
+   "day": "2017-01-01",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 2.220446049250313e-16
+  },
+  {
+   "strategy": "S1",
+   "model_id": "S1_r1_2016-12-31",
+   "day": "2017-12-31",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 2.220446049250313e-16
+  },
+  {
+   "strategy": "S1",
+   "model_id": "S1_r1_2016-12-31",
+   "day": "2018-12-31",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 6.938893903907228e-17
+  },
+  {
+   "strategy": "S1",
+   "model_id": "S1_r3_2020-12-31",
+   "day": "2021-01-01",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 2.220446049250313e-16
+  },
+  {
+   "strategy": "S1",
+   "model_id": "S1_r3_2020-12-31",
+   "day": "2021-12-31",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 1.6653345369377348e-16
+  },
+  {
+   "strategy": "S1",
+   "model_id": "S1_r3_2020-12-31",
+   "day": "2022-12-31",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 2.220446049250313e-16
+  },
+  {
+   "strategy": "S1",
+   "model_id": "S1_r4_2022-12-31",
+   "day": "2023-01-01",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 2.220446049250313e-16
+  },
+  {
+   "strategy": "S1",
+   "model_id": "S1_r4_2022-12-31",
+   "day": "2024-01-01",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 2.220446049250313e-16
+  },
+  {
+   "strategy": "S1",
+   "model_id": "S1_r4_2022-12-31",
+   "day": "2024-12-31",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 2.220446049250313e-16
+  },
+  {
+   "strategy": "S2",
+   "model_id": "S2_r1_2016-12-31",
+   "day": "2017-01-01",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 1.1102230246251565e-16
+  },
+  {
+   "strategy": "S2",
+   "model_id": "S2_r1_2016-12-31",
+   "day": "2017-12-31",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 2.220446049250313e-16
+  },
+  {
+   "strategy": "S2",
+   "model_id": "S2_r1_2016-12-31",
+   "day": "2018-12-31",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 4.85722573273506e-17
+  },
+  {
+   "strategy": "S2",
+   "model_id": "S2_r2_2018-12-31",
+   "day": "2019-01-01",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 1.1102230246251565e-16
+  },
+  {
+   "strategy": "S2",
+   "model_id": "S2_r2_2018-12-31",
+   "day": "2020-01-01",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 2.220446049250313e-16
+  },
+  {
+   "strategy": "S2",
+   "model_id": "S2_r2_2018-12-31",
+   "day": "2020-12-31",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 2.220446049250313e-16
+  },
+  {
+   "strategy": "S2",
+   "model_id": "S2_r4_2022-12-31",
+   "day": "2023-01-01",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 1.1102230246251565e-16
+  },
+  {
+   "strategy": "S2",
+   "model_id": "S2_r4_2022-12-31",
+   "day": "2024-01-01",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 3.3306690738754696e-16
+  },
+  {
+   "strategy": "S2",
+   "model_id": "S2_r4_2022-12-31",
+   "day": "2024-12-31",
+   "daily_eq_perday_batch_bitwise": true,
+   "class_eq_stored": true,
+   "max_abs_dp_vs_stored": 1.1102230246251565e-16
+  }
+ ],
+ "s3_daily_vs_batch": {
+  "rows": 207456,
+  "index_equal": true,
+  "p_up_bitwise": true,
+  "pred_equal": true,
+  "model_id_equal": true,
+  "alarm_days_equal": true,
+  "retrain_days_equal": true
+ },
+ "scheduled_all_ok": true,
+ "scheduled_max_abs_dp_vs_stored": 3.3306690738754696e-16
+}

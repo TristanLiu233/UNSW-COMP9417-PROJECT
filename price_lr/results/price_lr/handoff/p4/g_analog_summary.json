@@ -1,0 +1,178 @@
+{
+ "design": "results/price_lr/strategy_design.md section 12",
+ "years": [
+  2015,
+  2024
+ ],
+ "Y2025": "added on 11-18 after the 2025-2026 opening (section 12.4)",
+ "main": {
+  "expanding": {
+   "n": 10,
+   "median": 4.810453133822705,
+   "q10": -2.929431982031507,
+   "q90": 11.241285441935117,
+   "min": -3.214133673903774,
+   "max": 12.909748829289057,
+   "weeks_G_gt_0": 7
+  },
+  "sliding": {
+   "n": 10,
+   "median": 3.2833906136631796,
+   "q10": -2.3057268275354588,
+   "q90": 12.269867182810701,
+   "min": -3.708609271523173,
+   "max": 12.686249467858659,
+   "weeks_G_gt_0": 7
+  }
+ },
+ "BA_b1_by_year": {
+  "2015": 72.696,
+  "2016": 78.242,
+  "2017": 68.062,
+  "2018": 76.517,
+  "2019": 56.418,
+  "2020": 76.259,
+  "2021": 73.276,
+  "2022": 80.398,
+  "2023": 74.127,
+  "2024": 83.245
+ },
+ "supplement_37_43": {
+  "n": 15,
+  "median": 4.639175257731949,
+  "q10": -0.45012342093799873,
+  "q90": 7.688039227393489,
+  "min": -2.5227651206462838,
+  "max": 10.440503432494268,
+  "weeks_G_gt_0": 12
+ },
+ "daily_interface_spot_checks": [
+  {
+   "year": 2015,
+   "method": "expanding",
+   "day": "2015-12-13",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2015,
+   "method": "sliding",
+   "day": "2015-12-13",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2016,
+   "method": "expanding",
+   "day": "2016-12-07",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2016,
+   "method": "sliding",
+   "day": "2016-12-07",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2017,
+   "method": "expanding",
+   "day": "2017-12-08",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2017,
+   "method": "sliding",
+   "day": "2017-12-08",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2018,
+   "method": "expanding",
+   "day": "2018-12-09",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2018,
+   "method": "sliding",
+   "day": "2018-12-09",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2019,
+   "method": "expanding",
+   "day": "2019-12-10",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2019,
+   "method": "sliding",
+   "day": "2019-12-10",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2020,
+   "method": "expanding",
+   "day": "2020-12-11",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2020,
+   "method": "sliding",
+   "day": "2020-12-11",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2021,
+   "method": "expanding",
+   "day": "2021-12-12",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2021,
+   "method": "sliding",
+   "day": "2021-12-12",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2022,
+   "method": "expanding",
+   "day": "2022-12-13",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2022,
+   "method": "sliding",
+   "day": "2022-12-13",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2023,
+   "method": "expanding",
+   "day": "2023-12-07",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2023,
+   "method": "sliding",
+   "day": "2023-12-07",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2024,
+   "method": "expanding",
+   "day": "2024-12-08",
+   "bitwise_equal": true
+  },
+  {
+   "year": 2024,
+   "method": "sliding",
+   "day": "2024-12-08",
+   "bitwise_equal": true
+  }
+ ],
+ "limitations": [
+  "Dec 7-13 is not Mon-Sun in other years",
+  "n = 10, years not independent",
+  "reanalysis weather in history vs live-week inputs may differ",
+  "analog models follow the final-training method but are not the submitted model",
+  "descriptive historical analog, not a prediction interval or a live score"
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "rule": "strategy_design.md section 11.1-11.2",
+ "uses_2025_2026": false,
+ "ranking_2015_2024": [
+  "S2",
+  "S1",
+  "S3",
+  "S0"
+ ],
+ "BalAcc_2015_2024": {
+  "S0": 75.08569538291118,
+  "S1": 76.1747416479332,
+  "S2": 76.30316495819278,
+  "S3": 75.96538550047602
+ },
+ "F": "S2",
+ "F_minus_others": [
+  {
+   "vs": "S1",
+   "diff_pp": 0.12842331025957776,
+   "lo": -0.0543615565441847,
+   "hi": 0.30496172394668225,
+   "ci_includes_0": true
+  },
+  {
+   "vs": "S3",
+   "diff_pp": 0.33777945771676343,
+   "lo": 0.13508765330896963,
+   "hi": 0.5310847409085763,
+   "ci_includes_0": false
+  },
+  {
+   "vs": "S0",
+   "diff_pp": 1.2174695752815978,
+   "lo": 0.9461183634809466,
+   "hi": 1.4899336522875581,
+   "ci_includes_0": false
+  }
+ ],
+ "candidate_set": [
+  "S2",
+  "S1"
+ ],
+ "tie_keys": {
+  "S2": {
+   "retrains_effective_in_dev": 4,
+   "window": "sliding",
+   "BalAcc": 76.30316495819278
+  },
+  "S1": {
+   "retrains_effective_in_dev": 4,
+   "window": "expanding",
+   "BalAcc": 76.1747416479332
+  }
+ },
+ "P_provisional": "S1",
+ "R_backup": "S2",
+ "pending": "11-18: veto check on 2025-01-01..2026-10-31 (section 11.4), then final training (11.5)"
+}

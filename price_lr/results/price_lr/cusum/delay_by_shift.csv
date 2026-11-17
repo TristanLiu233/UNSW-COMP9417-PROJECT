@@ -1,0 +1,9 @@
+shift_sigma0,noise,h,mean_delay_days,median_delay_days,q95_delay_days
+0.5,iid_normal,6,48.100999999999999,36,123
+0.5,block_bootstrap_2014,6,47.790999999999997,34,129
+1,iid_normal,6,12.423999999999999,11,23
+1,block_bootstrap_2014,6,12.898999999999999,11,26
+2,iid_normal,6,4.8090000000000002,5,7
+2,block_bootstrap_2014,6,5.0609999999999999,5,7
+3,iid_normal,6,3.2890000000000001,3,4
+3,block_bootstrap_2014,6,3.4180000000000001,3,4
