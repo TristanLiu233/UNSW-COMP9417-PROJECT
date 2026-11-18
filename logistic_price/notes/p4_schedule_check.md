@@ -1,23 +1,15 @@
-# P4 分工核对
+# P4 schedule as of 15 November 2026
+This historical checklist covers main snapshot `5e8161224f248009d5ed577ba7fb09752acf1399`.
 
-核对日期：2026-11-15。基于 main 快照 `5e8161224f248009d5ed577ba7fb09752acf1399`。
-
-| 表格日期 | P4 事项 | 状态 |
+| November date | Task | Status at review |
 |---|---|---|
-| 11-07 | Python 3.11、starter、课程示例检查 | 原交付已验证；本次共享接口和 P4 检查在同一课程环境通过。 |
-| 11-08 | Pipeline、2014 评估、阈值搜索 | 已完成，见 tuning.py、study.py 和 results/frozen/。 |
-| 11-09 | 接入 P1 特征表 v1 | 已接入 src.common.features，训练和单日预测均通过该接口。证据见 v1_integration.md。 |
-| 11-10 | class_weight、C、阈值搜索；共享结果行 | 已完成。handoff/p4_2014_shared_row.csv 可供汇总，实际共享表尚未写入。 |
-| 11-11 | 消融、Logistic 基本定稿 | 公共消融沿用 baseline；P4 的变换对比和补充消融已完成。模型配方供小组审查。 |
-| 11-12 | 报告模板、图格式、年度类别比例 | 模板和图已提供，全组统一图格式及最终报告仍需协作。 |
-| 11-13 | live 周分析框架 | 已提供框架及训练截止后第 37–43 天的一个历史窗口。实际 live 周结果和后续独立窗口需按安排补充。 |
-| 11-14 | 2010–2014 重拟合并冻结 | 六套模型已保存，冻结回放已完成；小组最终选型及公共 stage1_config.json 尚未完成。 |
+| 7 | Python 3.11, starter notebook and course example | Verified in the course environment, along with the shared interface and P4 checks. |
+| 8 | Pipeline, 2014 evaluation and threshold search | Complete. See tuning.py, study.py and results/frozen/. |
+| 9 | Adopt P1 feature table v1 | Training and daily prediction use src.common.features. See v1_integration.md. |
+| 10 | Search class weights, C and threshold | Complete. handoff/p4_2014_shared_row.csv was ready for the group table. |
+| 11 | Ablation and candidate model | The baseline supplies the initial ablation. P4 completed the transformation comparison and additional ablations for review. |
+| 12 | Report outline, figure conventions and annual class shares | Materials ready for group coordination. |
+| 13 | Live-week analysis framework | Framework and one historical window covering days 37–43 available. Further windows depend on retraining records. |
+| 14 | Refit through 2014 and freeze | Six saved models and replay results available. Group selection and the shared stage1_config.json were pending. |
 
-## 交付后还需落实
-
-1. 将 logistic_price/ 通过 PR 合入 main；本次提供的 main ZIP 尚无此目录。
-2. 对齐 Logistic 与价格树的比较结果，确定最终价格模型，汇总公共配置。
-3. 与需求模型组合成双目标 Forecaster，运行完整提交检查。
-4. 按会议分工开展漂移检测、自适应及最终报告。日型分析由 Wangqi 负责。
-
-本次修改全部位于 logistic_price/；共享特征、baseline、Ridge 和已有模型结果保持原样。
+At review, the remaining handoff tasks were to merge logistic_price/ into main, compare the two price classifiers, record the group selection, combine both tasks in Forecaster and check the submission. Drift, adaptation and report work followed the meeting assignments. Wangqi owned day-type analysis. The P4 changes were confined to logistic_price/.

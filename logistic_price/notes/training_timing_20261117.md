@@ -1,36 +1,19 @@
-# P4 训练耗时与复现自测（2026-11-17）
+# P4 training time and reproducibility, 17 November 2026
+One complete final-training CLI run took **3.345846 seconds** (about 3.346 seconds). It reproduced the 16 November artifact byte for byte and all 672 predictions on the 14 days checked. See the [machine-readable record](training_timing_20261117.json).
 
-## 结论
+## Timing conditions
+- Commit `c23c95956eea95dd56e311ccb22a25fdbf2b5457`. Apple M2, eight logical cores, 16 GiB RAM, macOS 26.3.1 arm64, Python 3.11.18 and one fitting thread. The JSON lists dependency versions.
+- The parent process used `time.perf_counter()` around a fresh Python CLI process. Timing includes startup, imports, CSV prefix reading, feature construction, nested threshold selection, final fitting, audit digest and file writes. Exit code was 0.
+- Artifact comparison and prediction checks ran after the timer stopped. This single local measurement used the existing OS file cache.
 
-完整运行现有最终训练 CLI 一次，墙钟耗时 **3.345846 秒（约 3.346 秒）**。新生成模型与 2026-11-16 的相同配置工件 SHA256 完全一致；训练审计记录、标准化器、模型系数与截距一致，14 天共 672 档逐日预测一致。
+## Configuration
+The selected log_interactions31 model used 31 features, C=1, class_weight=None and seed 17. Inner training covered 2010-01-29 to 2025-10-31 (276,240 rows). Validation covered 2025-11-01 to 2026-10-31 (17,520 rows). Of 36 thresholds from 0.25 to 0.60 in steps of 0.01, τ=0.49 was selected. The final fit used 293,760 rows through 2026-10-31.
 
-本次只补测已有实现的耗时和复现，不修改训练代码、特征、参数网格或最终策略。原始机器可读记录见 [training_timing_20261117.json](training_timing_20261117.json)。
+## Reproducibility checks
+The two training.json files matched. The scaler's mean_, scale_, var_ and n_samples_seen_ matched exactly, as did the classifier's coef_, intercept_, classes_ and n_iter_. Both bundles recorded identical column order, recipe, threshold, cutoff, row count and settings. Both logistic.joblib files had SHA256 `7e898b2aebd146b83f40df869a9ffbc728bc447ca22970e872b51b103131dd50`. PriceClassifier.predict returned identical indexes and predictions on all 14 complete market days from 18 to 31 October 2026.
 
-## 计时范围与环境
-
-- 代码提交：`c23c95956eea95dd56e311ccb22a25fdbf2b5457`。
-- 环境：Apple M2，8 逻辑核，16 GiB 内存；macOS 26.3.1 arm64；Python 3.11.18。拟合线程限制为 1，依赖版本见 JSON。
-- 由父进程以 `time.perf_counter()` 包围新启动的完整 Python CLI 子进程，包含解释器/依赖加载、CSV 前缀读取、特征构造、嵌套阈值选择、最终重拟合、审计摘要计算和文件写出，返回码为 0。
-- 与旧工件的比较及 14 天预测检查发生在计时结束之后，不计入训练耗时。
-- 仅计时一次，未清理操作系统文件缓存；不是冷缓存基准、跨机器保证或最坏运行时间。
-
-## 训练配置
-
-固定已选 log_interactions31（31 特征）、C=1、class_weight=None、随机种子 17。内部训练为 2010-01-29–2025-10-31，共 276,240 行；内部验证为 2025-11-01–2026-10-31，共 17,520 行。36 个阈值候选（0.25–0.60，步长 0.01）选得 τ=0.49，再用截至 2026-10-31 的 293,760 行重新拟合。
-
-## 复现核对
-
-- 新旧 `training.json` 完全一致。
-- scaler 的 mean_、scale_、var_、n_samples_seen_ 完全一致。
-- Logistic 的 coef_、intercept_、classes_、n_iter_ 完全一致。
-- 有序特征、recipe、阈值、截止日、训练行数、参数记录一致。
-- 新旧 `logistic.joblib` SHA256 均为 `7e898b2aebd146b83f40df869a9ffbc728bc447ca22970e872b51b103131dd50`。
-- 通过公开 PriceClassifier.predict 接口比较 2026-10-18–10-31 的 14 个完整市场日，672 档预测及索引完全一致。
-
-## 复测命令
-
-在仓库根目录使用课程虚拟环境执行，将数据和输出路径换成本机路径。输出目录必须尚不存在。
-
+## Repeat the timing
+Run from the repository root with the course environment and a fresh output path.
 ```sh
 /usr/bin/time -p .venv311/bin/python -m logistic_price.final_training \
   --data /absolute/path/nem_weather_halfhourly_2010_2026.csv \
@@ -38,12 +21,7 @@
   --output /absolute/path/new-price-artifact
 ```
 
-`real` 为上述范围的墙钟耗时（系统工具显示精度可能不同）。本次精确测量由 Python 父进程计时，数据、源代码、工件哈希及版本均在 JSON 中，可用于对齐复测条件。
+The system timer's `real` field gives elapsed wall time. The JSON contains the precise parent-process measurement, versions and hashes for the data, code and artifacts.
 
-## 交接边界
-
-P4 的价格训练组件本机耗时约 3.346 秒；P1 仍需在最终组合包和目标环境中测量整个 train.py，确认两小时要求，并运行完整 check_submission。此记录不代表双目标包已通过官方检查。
-
-分工表安排 11 月 18 日首次查看 2025–2026；实际已在 11 月 16 日使用该时期进行阈值选择。本次为相同配置的耗时/复现检查，不新增策略比较，也不把该时期称为未见留出集。14 天预测检查同样仅检验一致性，不作为独立性能评估。
-
-本次提交只包含这份说明和对应 JSON，不上传课程 CSV、模型二进制、虚拟环境或 PyCharm 配置。
+## Handoff
+P1 still needs to time the combined train.py in the target environment against the two-hour limit and run check_submission on the full package. The schedule reserved 18 November for reviewing 2025–2026. The 16 November fit already used this period for threshold selection. The 17 November run checked timing and reproducibility using the same settings. The 14-day check measured agreement between runs. This timing release contained the note and its JSON record.

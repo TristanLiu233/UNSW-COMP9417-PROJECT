@@ -1,28 +1,21 @@
-# 训练后37–43天：live周分析框架
+# Live-week analysis at model age 37–43 days
+Model age is the target market date minus the most recent training cutoff date. A cutoff of 31 October 2026 places 7–13 December 2026 at ages 37–43 days. Midnight marks the end of the preceding market day's final interval.
 
-## 时间怎么对齐
+For the frozen model fitted through 31 December 2014, the matching window is 6–12 February 2015 (7 days, 336 intervals). `handoff/age_37_43_frozen_window.csv` gives balanced accuracy, accuracy and both intervals for each candidate and both baselines. The interval-level data are in `age_37_43_predictions.csv.gz`.
 
-这里“训练后第d天”定义为：目标市场日减去最近一次实际训练截止市场日，差值为d。若最终训练截止2026-10-31，那么2026-12-07至12-13正好对应37–43天。不能把区间结束时间戳的午夜误当成次日。
+All six models predict the same historical week. The 2,000 bootstrap resamples describe uncertainty within that sample. Estimating December 2026 performance requires evidence across comparable historical windows.
 
-已有冻结模型训练截止2014-12-31，因此可观察的对应窗口是 **2015-02-06至2015-02-12**，共7天、336档。handoff/age_37_43_frozen_window.csv记录每个冻结候选和两条基线的BalAcc、Accuracy与两种区间；逐档值在age_37_43_predictions.csv.gz。
+## Using the group's retraining logs
+1. Record each deployed model's ID, training cutoff, activation and replacement dates. Retain the predictions and probabilities generated at the time.
+2. Select days 37–43 following each actual training cutoff.
+3. Include complete seven-day windows with known outcomes and the same model deployed throughout. Score its original forecasts.
+4. Report class counts, accuracy, balanced accuracy, yesterday and last-week baselines, and paired differences. Document overlapping windows and the retraining budget.
+5. Compare training length, season, class shares and market conditions with the expected live week. Other December weeks can provide seasonal comparisons. Record their actual model ages.
+6. Use the number and dependence of the windows to justify the live-week estimate and interval. Recalculate model age if the final cutoff changes.
 
-## 当前可以说明什么
+The original framework used the existing frozen run. At that stage, the final forecast depended on the group's strategy and retraining logs.
 
-这是一个真正的“模型训练后37–43天”窗口，能够演示提取和评分方法。六个候选预测的是同一周，它们不是六个独立历史周。不能拿这一周的成绩直接当作2026年12月live周预测，也不能把2,000次bootstrap当成2,000个独立历史周。
-
-## 拿到小组重训日志后怎么扩展
-
-1. 记录每个实际部署模型的model_id、训练截止日、启用日和被替换日，保留其当时生成的概率/预测。
-2. 对每次真正的训练事件计算目标日相对训练截止的天数，仅取37–43天。
-3. 只纳入该模型仍实际部署、窗口完整且真值已知的7天；不要用后来重训模型回填旧预测。
-4. 每个窗口报告两类样本数、Accuracy、BalAcc、昨日/上周基线和配对差值；明确窗口重叠和重训预算。
-5. 检查训练长度、季节、类别比例及市场状态是否与预计live周可比。若有多年12月可比周，可作为另一个对照，但不得伪装成模型年龄37–43天样本。
-6. 对窗口数量和依赖性充分说明后，才由小组综合给出live周表现估计和区间；若最终训练截止变化，重新计算目标模型年龄。
-
-本模块没有为制造更多样本而新增年度重训策略，也没有使用未发生的live周数据。最终预测段落留待组内策略与重训日志确定。
-
-## 复现辅助输出
-
+## Reproduce the handoff files
 ```sh
 python -m logistic_price.milestones --data data/nem_weather_halfhourly_2010_2026.csv --results logistic_price/results/frozen --output logistic_price/_scratch/handoff
 ```
