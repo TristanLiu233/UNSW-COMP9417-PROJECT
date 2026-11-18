@@ -4,6 +4,41 @@
 
 > 本次只新增 `price_lr/` 这一个顶层文件夹，没有改动其他组员的文件。P4 的 `logistic_price/` 只通过 import 使用，没有复制或修改。
 
+## 11-18 更新：Stage 3 决定
+
+**最终策略 S1**（扩展窗口），最终模型就是 P4 的 `fit_final(data, 2026-10-31)`，τ = 0.49，训练 293,760 行。决定过程见 [`results/price_lr/stage3/decision.md`](results/price_lr/stage3/decision.md)，自检见 [`results/price_lr/selfcheck/Stage3.md`](results/price_lr/selfcheck/Stage3.md)。
+
+* **否决检查**（设计第 11.4 节；2025-01-01 … 2026-10-31，669 天，BalAcc %）：
+
+  | 策略 | BalAcc |
+  |---|---|
+  | S0 | 71.01 |
+  | S1 | 79.90 |
+  | S2 | 80.71 |
+  | S3 | 74.72 |
+  | b1 | 76.97 |
+  | b7 | 73.03 |
+
+  P = S1 不低于 b1，所以保留 S1。S2 − S1 = +0.81 [+0.36, +1.27]，这个配对 bootstrap 只作描述，没有参与决策。这段时间不是未见过的留出集：冻结 LR 的成绩组内已经看过；P4 在 11-16 用 2025-11 … 2026-10 选过 τ。
+* **最终工件：** 本机重跑 P4 的 CLI，τ、行数、折边界和 τ 处的选择分数都和 P4 的记录一致。但 `logistic.joblib` 的 SHA（`b44d5df3…`）和 P4 记录的（`7e898b2a…`）不同。P4 的工件不在仓库里，系数比较要等拿到 P4 的文件后再做：`python -m src.price_lr.final_check --reference <目录>`。提交用 P4 的工件，`results/price_lr/stage3/final_artifact/` 只用于核对。
+* **G 历史类比补上 2025 年：** n = 11，扩展窗口中位数 +4.60 个百分点，中间 80% 为 [−2.90, +11.06]；2025 年那一周是 +1.85。n = 10 的旧结果保留在原文件里。
+* **交接包：**
+  * `handoff/final_config/`：给 P1 和 P4 的最终训练配置；
+  * `handoff/p4/`、`handoff/p3_price_cusum/`：两个 README 的开头都加了 11-18 的更新。
+
+  2025–2026 的所有成绩只放在 `results/price_lr/stage3/`、`g_analog/*_2015_2025.*` 和交接包里，M7 的文件没有改。
+
+运行顺序（接在下方 M7 命令之后）：
+
+```sh
+python -m src.price_lr.stage3                # 2025–2026 打分和否决检查
+python -m src.price_lr.final_check           # 先在 _group_main 用 P4 CLI 生成 results/price_lr/stage3/final_artifact
+python -m src.price_lr.g_analog add2025
+python -m src.price_lr.handoff stage3-p4
+python -m src.price_lr.handoff stage3-p1-p3
+pytest tests/price_lr -q                     # 18 个测试
+```
+
 ## 预注册设计
 
 [`results/price_lr/strategy_design.md`](results/price_lr/strategy_design.md)，第 2 版，2026-11-17 在任何回放之前确认后冻结。要点如下：

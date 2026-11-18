@@ -1,0 +1,38 @@
+{
+ "artifact": "stage3/final_artifact",
+ "logistic_joblib_sha256": "b44d5df38c9a49825f31913ec844997b40c65d53ce656c31274f758fbe318c12",
+ "training_json_sha256": "6d4b084e3cfd6fc374f7a92981e0c08152484f3f52bd8d4d0f457656537fd9c2",
+ "required_checks": {
+  "tau_0.49": true,
+  "final_rows_293760": true,
+  "inner_rows_276240": true,
+  "validation_rows_17520": true,
+  "validation_2025-11-01_2026-10-31": true,
+  "candidates_36": true,
+  "recipe": true,
+  "C_1": true,
+  "class_weight_None": true,
+  "seed_17": true,
+  "train_end": true,
+  "tau_score_matches_P4_note_6dp": true
+ },
+ "required_all_pass": true,
+ "P4_recorded_sha256": "7e898b2aebd146b83f40df869a9ffbc728bc447ca22970e872b51b103131dd50",
+ "sha_equal_to_P4": false,
+ "environment": {
+  "python": "3.11.8",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "sklearn": "1.9.1",
+  "numpy": "2.4.6",
+  "pandas": "3.1.0",
+  "scipy": "1.17.1",
+  "joblib": "1.6.0",
+  "threadpoolctl": "3.8.0"
+ },
+ "predict_672": {
+  "slots": 672,
+  "loads_with_PriceClassifier": true,
+  "valid_output": true,
+  "role": "consistency only, not a score"
+ }
+}

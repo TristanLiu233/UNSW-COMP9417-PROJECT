@@ -143,6 +143,7 @@ def test_saved_models_match_log(log):
 
 
 def test_no_holdout_scores_in_summaries():
+    """Constrains M7 files only; 11-18 Stage 3 outputs under results/price_lr/stage3/ are exempt (test_stage3.py)."""
     for f in ("yearly_dev.csv",):
         assert pd.read_csv(R(f))["year"].max() == 2024
     assert pd.read_csv(R("monthly_dev.csv"))["month"].max() == "2024-12"
