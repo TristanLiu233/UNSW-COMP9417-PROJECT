@@ -1,21 +1,19 @@
-# 保留没有带来提升的搜索
+# Earlier searches on the original 22 features
+Both searches chose hyperparameters on two chronological folds in 2013, then fitted on 2010–2013 and evaluated on 2014.
 
-在引入新的电价表达之前，先尝试过两轮原始22列Logistic搜索。两轮都只在2013两个时间折选参数，再以2010–2013训练、2014验证。这些记录用于解释为什么后续工作转向特征表达。
-
-| 搜索 | 候选数 | 按2013选出的参数 | 2014 BalAcc |
+| Search | Candidates | Settings selected on 2013 | 2014 balanced accuracy |
 |---|---:|---|---:|
-| standard | 30 | C=1，balanced，阈值0.40 | 76.1096% |
-| expanded | 2,070 | C=10，{0:1,1:1.5}，阈值0.39 | 75.3640% |
+| Standard | 30 | C=1, balanced weights, threshold 0.40 | 76.1096% |
+| Expanded | 2,070 | C=10, weights {0:1, 1:1.5}, threshold 0.39 | 75.3640% |
 
-标准搜索使用C={0.01,0.1,1}、None/balanced两种权重、0.40–0.60步长0.05的阈值。扩展搜索使用9档C、5种权重以及0.20–0.65步长0.01的阈值。扩展配置2013分数更高，但2014反而下降，不能因网格更大就认定模型更好。
+The standard grid used C values 0.01, 0.1 and 1, two weight settings (None and balanced), and thresholds from 0.40 to 0.60 in steps of 0.05. The expanded grid used nine C values, five weight settings and thresholds from 0.20 to 0.65 in steps of 0.01. Its higher 2013 score did not carry through to 2014. Subsequent experiments explored alternative price features.
 
-记录保存在 `results/tuning_checks/standard/` 和 `expanded/`，各含 `search.csv`、`ablation.csv`、`run.json`。这些早期结果来自Python3.13环境，未在分支包中重复放入旧模型工件；本轮正式研究的六套冻结模型均已在课程Python3.11环境重新训练。
+Each search directory under `results/tuning_checks/` (`standard/` and `expanded/`) contains `search.csv`, `ablation.csv` and `run.json`. The early runs used Python 3.13. The package omits their old binaries. All six frozen models in the main study were fitted in the course Python 3.11 environment.
 
-如需复查早期搜索，使用独立输出目录：
-
+Run the early searches in separate output directories.
 ```sh
 python -m logistic_price.tuning --data data/nem_weather_halfhourly_2010_2026.csv --output logistic_price/_scratch/standard
 python -m logistic_price.tuning --data data/nem_weather_halfhourly_2010_2026.csv --output logistic_price/_scratch/expanded --search-profile extended
 ```
 
-这两条命令仅运行早期2014实验。四种输入表达和完整历史回放由 `python -m logistic_price.study` 负责。当前采用的正式参数与结果以 `results/frozen/` 为准。
+Use `python -m logistic_price.study` for all four feature configurations and full replay. The reference parameters and scores are in `results/frozen/`.

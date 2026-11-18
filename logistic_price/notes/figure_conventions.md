@@ -1,10 +1,9 @@
-# P4图表约定（供小组统一时参考）
-
-- Accuracy、BalAcc和类别比例均使用百分数；差值使用“百分点”。
-- 时间按固定AEST市场日归属；2026只到10月，图标题注明。
-- 月度Accuracy展示独立半小时正态近似与整日bootstrap两套95%区间，不能把Accuracy区间当成BalAcc区间。
-- 主模型使用深蓝色，参考使用橙色，昨日基线灰色，上周基线紫色；其他对比图通过明确图例区分。
-- 每张图包含标题、横轴时间/单位、纵轴指标/单位、图例；PNG保存150或160dpi。
-- 2014验证和2015–2026冻结回放分开标注；后者用训练至2014年底的模型。
-- 2010类别比例图排除没有昨日均价的1月1日；2026排除未发布的11–12月。
-- 这些是本模块的现行约定，尚不代表全组已共同采用。
+# P4 figure conventions
+- Show accuracy, balanced accuracy and class shares as percentages. Express differences in percentage points.
+- Assign intervals to market days in fixed AEST. Label 2026 as January–October.
+- Show both 95% intervals for monthly accuracy, using the independent half-hour normal approximation and the whole-day bootstrap. Compute separate intervals for balanced accuracy.
+- Use dark blue for the primary model, orange for the reference, grey for yesterday and purple for last week. Identify other series in the legend.
+- Include a title, a time axis with units, a metric axis with units and a legend. Export PNGs at 150 or 160 dpi.
+- Label 2014 validation separately from the 2015–2026 replay of models fitted through December 2014.
+- Exclude 1 January 2010 from class shares because the previous day's mean is unavailable. The release ends in October 2026.
+- These conventions apply to P4. Group-wide adoption requires agreement.
