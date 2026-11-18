@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parent
 DATA_PATH = ROOT.parent / "data" / "nem_weather_halfhourly_2010_2026.csv"
 OUTPUT_DIR = ROOT / "outputs" / "day_type_changes"
 
-MODEL_TAG = "loyo_k2_pca95"
+MODEL_TAG = "forward_k2_pca95"
 LABELS_PATH = (
     ROOT / "outputs" / "day_type_clustering"
     / f"day_type_assignments_{MODEL_TAG}.csv"
