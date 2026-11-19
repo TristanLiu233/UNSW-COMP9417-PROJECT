@@ -1,0 +1,90 @@
+{
+  "selected": {
+    "target": "residual_b1",
+    "params": {
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.2,
+      "max_iter": 300
+    },
+    "seed": 0
+  },
+  "best_by_target": {
+    "level": {
+      "target": "level",
+      "params": {
+        "max_leaf_nodes": 31,
+        "learning_rate": 0.1,
+        "max_iter": 300
+      },
+      "seed": 0
+    },
+    "residual_b1": {
+      "target": "residual_b1",
+      "params": {
+        "max_leaf_nodes": 31,
+        "learning_rate": 0.2,
+        "max_iter": 300
+      },
+      "seed": 0
+    }
+  },
+  "group_reference": {
+    "target": "level",
+    "params": {
+      "max_leaf_nodes": 31,
+      "learning_rate": 0.1,
+      "max_iter": 100
+    },
+    "seed": 17
+  },
+  "features": [
+    "slot_sin",
+    "slot_cos",
+    "season_sin",
+    "season_cos",
+    "weekend",
+    "weekday_0",
+    "weekday_1",
+    "weekday_2",
+    "weekday_3",
+    "weekday_4",
+    "weekday_5",
+    "weekday_6",
+    "nsw_demand_lag1",
+    "nsw_price_lag1",
+    "nsw_demand_lag7",
+    "nsw_price_lag7",
+    "prev_price_mean",
+    "lag1_price_gap",
+    "syd_temp",
+    "syd_rh",
+    "syd_cloud",
+    "syd_solar",
+    "vic_demand_lag1",
+    "vic_demand_lag7",
+    "vic_price_lag7",
+    "nsw_demand_mean7",
+    "nsw_demand_std7",
+    "nsw_price_mean7",
+    "nsw_price_std7"
+  ],
+  "validation": "2014-01-01 through 2014-12-31",
+  "frozen_fit_through": "2014-12-31",
+  "training_start": "2010-01-29",
+  "selection": "minimum 2014 MAPE; ties by MAE, iterations, leaves, rate and target",
+  "validation_metrics": {
+    "mape_pct": 2.271158962503791,
+    "mae_mw": 181.64653457962746
+  },
+  "dataset_sha256": "c13711002906140eaf7cc67c1ce17a49facd359cf3d1a84722aaa3ccd647752c",
+  "python": "3.11.18",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.1.0",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "holidays": "0.107"
+  },
+  "status": "P3 handoff candidate; not the team's approved configuration"
+}

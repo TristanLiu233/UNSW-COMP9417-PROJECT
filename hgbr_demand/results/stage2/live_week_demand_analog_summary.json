@@ -1,0 +1,14 @@
+{
+  "point_median_mape_pct": 3.0480771509717717,
+  "empirical_middle_80_pct": [
+    2.0739157888287316,
+    5.017315015394412
+  ],
+  "n_weeks": 11,
+  "lead_days": [
+    37,
+    43
+  ],
+  "window": "Dec 7–13 for 2015–2025",
+  "interpretation": "descriptive historical analog spread, not a guaranteed prediction interval or live score"
+}

@@ -1,0 +1,13 @@
+{
+  "statistic": "market-day MAPE in percentage points; upper CUSUM",
+  "reference": "2014-01-01 through 2014-12-31",
+  "calibration_fit_through": "2013-12-31",
+  "mean_daily_mape_pct": 2.271158962503791,
+  "sd_daily_mape_pct": 1.5741729310923223,
+  "allowance_k_pct": 0.7870864655461611,
+  "threshold_h": 29.724755195954327,
+  "calibration": "95th percentile of 365-day CUSUM maxima under moving-block resampling of 2014 errors",
+  "bootstrap_block_days": 7,
+  "bootstrap_replicates": 2000,
+  "seed": 0
+}

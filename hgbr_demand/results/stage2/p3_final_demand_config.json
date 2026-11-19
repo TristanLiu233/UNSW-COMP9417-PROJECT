@@ -1,0 +1,14 @@
+{
+  "target": "residual_b1",
+  "params": {
+    "max_leaf_nodes": 31,
+    "learning_rate": 0.2,
+    "max_iter": 300
+  },
+  "seed": 0,
+  "strategy_from_2015_2024": "cusum_expanding",
+  "final_train_start": "2010-01-29",
+  "final_train_through": "2026-10-31",
+  "holdout_period": "2025-01-01 through 2026-10-31 (not used to rank strategies)",
+  "status": "P3 demand candidate for group review"
+}

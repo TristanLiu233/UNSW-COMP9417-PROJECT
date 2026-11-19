@@ -1,0 +1,17 @@
+{
+  "published": {
+    "mape_pct": 2.4355253151006484,
+    "mae_mw": 192.49681716073613
+  },
+  "local": {
+    "mape_pct": 2.4381964125834843,
+    "mae_mw": 192.6987455455474
+  },
+  "local_minus_published": {
+    "mape_pct": 0.0026710974828358935,
+    "mae_mw": 0.20192838481128206
+  },
+  "group_csv_prefix_sha256": "8243fff94d730db8c221cd21b9d59413c40dfe4cd6621c50e0b35233aca84a4b",
+  "local_csv_prefix_match": true,
+  "identical_metrics": false
+}

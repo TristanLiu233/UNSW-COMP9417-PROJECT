@@ -1,0 +1,2 @@
+member,model,n_features,target,max_leaf_nodes,learning_rate,max_iter,seed,mape_pct,mae_mw
+P3,HistGradientBoostingRegressor,29,residual_b1,31,0.2,300,0,2.271158962503791,181.64653457962746
