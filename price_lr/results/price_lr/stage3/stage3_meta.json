@@ -1,0 +1,27 @@
+{
+ "period": [
+  "2025-01-01",
+  "2026-10-31"
+ ],
+ "n_days": 669,
+ "latest_timestamp_read": "2026-11-01 00:00:00",
+ "boot_index_sha256": "ea53826aaa958c45e0b556776dfe27b29572eb99f06c861e338f49cc942b5f24",
+ "boot_role": "descriptive only",
+ "cusum_checks": {
+  "S0_monitor": {
+   "rows_2015_2024": 3653,
+   "equal_to_m7_file": true,
+   "monitor_s0_reproduced": true
+  },
+  "S3": {
+   "predictions_bitwise_equal": true,
+   "events_equal": true,
+   "S_2015_2024_equal_to_m7_file": true,
+   "alarm_flags_all_days_equal": true,
+   "retrains_total": 6,
+   "retrains_effective_in_2025_2026": 0,
+   "budget_left_at_2025_01_01": 0
+  }
+ },
+ "inputs_checked": true
+}

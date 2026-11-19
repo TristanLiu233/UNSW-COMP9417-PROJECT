@@ -1,0 +1,53 @@
+{
+ "design": "results/price_lr/strategy_design.md (frozen 2026-11-17)",
+ "rule": "a day's labels are used only after that day ends; nothing from 2025-01-01 onwards is SCORED or summarised",
+ "outputs": [
+  {
+   "output": "cusum/*",
+   "labels_read_through": "2014-12-31",
+   "latest_row_read": "2015-01-01 00:00",
+   "scored_period": "2014"
+  },
+  {
+   "output": "s0..s3_predictions.parquet, models_log.csv, s3_events.csv",
+   "labels_read_through": "2026-10-31",
+   "note": "causal simulation: each retrain at cutoff D reads rows <= D+1 00:00 (fit_final/fit_sliding truncate); S3 reads day d's labels after storing d's prediction; 2025-2026 predictions are stored but not scored"
+  },
+  {
+   "output": "s3_daily_cusum.csv, s3_daily_mode_cusum.csv",
+   "labels_read_through": "2026-10-31",
+   "note": "logloss and S masked (NaN) after 2024-12-31; alarm/retrain flags kept as simulation state"
+  },
+  {
+   "output": "s0_monitor_cusum.csv",
+   "labels_read_through": "2024-12-31"
+  },
+  {
+   "output": "strategy_comparison_dev.csv, yearly_dev.csv, monthly_dev.csv, paired_bootstrap_dev.csv, tradeoff_dev.csv, eval_meta.json, stage3_provisional.json, fig_m7_*.png",
+   "labels_read_through": "2024-12-31",
+   "latest_row_read": "2025-01-01 00:00",
+   "scored_period": "2015-01-01..2024-12-31"
+  },
+  {
+   "output": "g_analog/*",
+   "labels_read_through": "2024-12-31",
+   "scored_period": "Dec 7-13 of 2015..2024 and 37-43-day windows ending <= 2024-12-31"
+  },
+  {
+   "output": "labels check (replay Context)",
+   "labels_read_through": "2026-10-31",
+   "note": "P4 label 1[nsw_price > prev_price_mean] compared with da.targets on every day 2010-01-29..2026-10-31: identical; no score computed"
+  }
+ ],
+ "not_read": "P4 main_comparison.csv was not opened in M7; HGBC M6 2015-2024 results only as listed in design section 0",
+ "events": [
+  {
+   "when": "2026-11-18T14:33:14+11:00",
+   "event": "2026-11-18 first scoring of S1-S3 (and S0, b1, b7) on 2025-2026",
+   "read_range": "2025-01-01 .. 2026-10-31 (669 days; latest row read 2026-11-01 00:00)",
+   "rule": "strategy_design.md section 11.4 (veto only; P=S1, R=S2 from stage3_provisional.json sha256 94bbcde1...)",
+   "outputs": "results/price_lr/stage3/ only",
+   "already_seen_before_today": "frozen LR (S0) on 2025-2026 seen by the group; P4 used 2025-11-01..2026-10-31 for tau selection on 11-16 (design section 0)"
+  }
+ ]
+}

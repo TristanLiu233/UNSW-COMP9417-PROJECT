@@ -1,0 +1,13 @@
+{
+ "reads": [
+  {
+   "file": "course CSV via load_raw/prefix",
+   "max_timestamp": "2015-01-01 00:00"
+  },
+  {
+   "file": "_group_main/logistic_price/results/frozen/validation_predictions.csv.gz",
+   "max_timestamp": "2015-01-01 00:00"
+  }
+ ],
+ "latest_timestamp_read": "2015-01-01 00:00"
+}

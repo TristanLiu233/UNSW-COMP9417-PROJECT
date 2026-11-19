@@ -1,0 +1,22 @@
+{
+ "rule": "strategy_design.md section 11.4",
+ "period": [
+  "2025-01-01",
+  "2026-10-31"
+ ],
+ "n_days": 669,
+ "provisional_file_sha256": "94bbcde179f834c980f93dd2e4db3a42f45a09b8888504633d8d7a16369a54cc",
+ "P": "S1",
+ "R": "S2",
+ "BalAcc_P": 79.90154457449935,
+ "BalAcc_R": 80.71017978733308,
+ "BalAcc_b1": 76.97465597097333,
+ "P_below_b1": false,
+ "R_not_below_b1": true,
+ "switch_to_R": false,
+ "reason": "P not below b1 -> keep P",
+ "final_strategy": "S1",
+ "final_window": "expanding",
+ "comparison": "unrounded values; strict '<' for 'below'",
+ "note": "2025-2026 were already partly seen: frozen LR (S0) scores by the group, and 2025-11-01..2026-10-31 used by P4 for tau selection on 11-16 (design section 0). This is the first scoring of S1-S3 under the pre-registered rule, not an unseen holdout."
+}

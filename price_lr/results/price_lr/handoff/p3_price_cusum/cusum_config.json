@@ -1,0 +1,107 @@
+{
+ "model": "LR log_interactions31 (C=1, class_weight=None), group selected price model",
+ "error_definitions": {
+  "logloss": "mean over the 48 half-hours of day D of -[y log p + (1-y) log(1-p)], p clipped",
+  "misclass": "share of day D's 48 half-hours with 1[p >= 0.42] != y"
+ },
+ "logloss_clip": [
+  1e-06,
+  0.999999
+ ],
+ "k": 0.5,
+ "h_candidates": [
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  10
+ ],
+ "arl0_target_days": 730,
+ "schemes": {
+  "main": {
+   "error": "logloss",
+   "truncate": true,
+   "q99": 1.1217511564460803,
+   "mu0": 0.45494858213961187,
+   "sigma0": 0.20428352718152845,
+   "k": 0.5,
+   "h": 6,
+   "arl0_median": 3650.0,
+   "arl0_q05": 1216.6666666666667,
+   "arl0_q95": ">3650",
+   "meets_target": true,
+   "role": "selected detector (log loss)"
+  },
+  "misclass": {
+   "error": "misclass",
+   "truncate": true,
+   "q99": 0.5908333333333337,
+   "mu0": 0.2092146118721461,
+   "sigma0": 0.13600843362334508,
+   "k": 0.5,
+   "h": 5,
+   "arl0_median": 3650.0,
+   "arl0_q05": 912.5,
+   "arl0_q95": ">3650",
+   "meets_target": true,
+   "role": "comparison only (not used)"
+  }
+ },
+ "timing": "update S_D at the end of day D; after an alarm the retrained model forecasts from D+1",
+ "ref_update_options": {
+  "A": "keep the 2014 mu0, sigma0, q99 after every retrain",
+  "B": "re-estimate from the new model's OOS errors (not used for LR; design 9.4)"
+ },
+ "ref_update": "A",
+ "ref_update_decision": {
+  "choice": "A",
+  "decided_by": "user",
+  "recorded_in": "results/price_lr/strategy_design.md section 10"
+ },
+ "bootstrap": {
+  "method": "weekly block bootstrap (full Mon-Sun weeks of 2014)",
+  "block_days": 7,
+  "series_days": 3650,
+  "replicates": 1000,
+  "seed": 0,
+  "arl_per_replicate": "3650 / n_alarms",
+  "blocks": 51,
+  "block_first_day": "2014-01-06",
+  "block_last_day": "2014-12-28",
+  "boot_matrix_sha256": "f479ed9e670d8ffb68558af54fb40461e500ce75a5d9d974ff81c25692f5e2b8",
+  "proba_2014_sha256": "4f123695664cd752ff731cd61017936e7a4479db0b3c787420448232852881b7"
+ },
+ "data_period": {
+  "calibration": "2014 out-of-sample predictions of LR fitted 2010-01-29..2013-12-31",
+  "latest_timestamp_read": "2015-01-01 00:00"
+ },
+ "ref": {
+  "validation_predictions": "_group_main/logistic_price/results/frozen/validation_predictions.csv.gz",
+  "sha256": "bdeee696dc2ea8d13218dcd64b231b5a5d6f69dd209d199c29dba0b8f9f905d7",
+  "tau0": 0.42,
+  "refit_check": {
+   "bitwise_equal": false,
+   "max_abs_diff": 1.4876988529977098e-14,
+   "rows_differing": 17208,
+   "rows": 17520,
+   "pred_at_tau0_equal": true,
+   "stats_max_abs_diff": 4.218847493575595e-15,
+   "no_trunc_mu0_sigma0_max_abs_diff": 3.885780586188048e-16,
+   "h_same": true,
+   "arl_table_same": true,
+   "alarms_2014_same": true
+  }
+ },
+ "code_commit": null,
+ "code_commit_note": "workspace is not a git repository; code identified by SHA-256 below",
+ "code_sha256": {
+  "src/price_lr/cusum_cal.py": "4a9a2d2807039f697aaa15d1743e08d78999296a21274d2af0132e7e58336e4e",
+  "src/price_lr/data.py": "46e7709ab8a1b17a4f6064ec400c8efb5da1865b69e1e4c7c16d277b84715c05",
+  "src/price_lr/env.py": "4be445c1e22cbf58e5b289487ac6c76e2e8eb135502ddb4ebe7a4281d2154e00",
+  "src/price_hgbc/cusum.py": "25756c7b1adeb4b3ff548e4d46d90d4321159992fd097438c9598012c7878d5e",
+  "src/price_hgbc/m4.py": "f8e73c011784836eb54ed9fc2487fa6613627f0a59efd10abb41d1e27b6d9a46"
+ },
+ "design_sha256": "f4e0099c3375d9a2f34273831d1295f4f04ec69220f0893526ec8c9c8479e9f7"
+}
