@@ -27,6 +27,16 @@
    * **P4 的工件没有提交到任何分支，**所以系数级的比较还没做。
    * **可能原因：** 和 M7 偏离第 1 条同类，即 lbfgs 在不同机器上的浮点差异。两边环境不同：本机 Python 3.11.8、macOS 26.6.2；P4 是 Python 3.11.18、macOS 26.3.1。这一点还没有证实。
    * **待办：** 拿到 P4 的文件后运行 `python -m src.price_lr.final_check --reference <目录>`。提交用 P4 的工件。
+   * **11-21 已核对（PASS）。** 文件来自 P4 在微信里发的 `P4_final_S1_artifacts.zip`（文件时间 11-16 22:16），解压到 scratchpad 目录后核对。
+     * **加载前：** P4 的 `logistic.joblib` SHA 是 `7e898b2a…`，和 P4 记录的一致。`training.json` 和本机的逐字节相同（`6d4b084e…`）。用 pickletools 和 strings 扫过，只引用 sklearn（Pipeline、StandardScaler、LogisticRegression）、joblib 和 numpy，和本机文件引用的名字相同。
+     * **`.venv/bin/python -m src.price_lr.final_check --reference <目录>`：**
+       * `training_json_equal`、`columns_equal`：true；
+       * `n_iter`：两边都是 19；
+       * scaler 的三个数组完全相同；
+       * `lr.coef_` 最大差 1.5e-14，`lr.intercept_` 最大差 4.1e-15，在 1e-12 以内，但不是逐位相同；
+       * 2026-10-18 到 10-31 共 672 档的类别完全相同，概率最大差 2.2e-14；
+       * `pass`：true。
+     * **结论：** 两份工件只在系数的末几位上不同，和 P4 的说法一致。最可能的原因是 lbfgs 在两台机器上的浮点差异。提交用 P4 的工件。结果写在 `stage3/final_artifact_check.json`，旧记录在 `history` 里。
 2. **G 交给 P4 晚了。** 原定 14:00 前交，`g_analog_summary_2015_2025.json` 到 11-18 15:51 才生成，发送时间以实际为准。
 3. **没有改变任何预注册参数。** 2025–2026 上的描述性配对 bootstrap（S2 − S1 = +0.81 [+0.36, +1.27]）没有参与决策。
 
