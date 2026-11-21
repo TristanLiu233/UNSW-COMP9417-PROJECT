@@ -4,6 +4,22 @@
 
 > 本次只新增 `price_lr/` 这一个顶层文件夹，没有改动其他组员的文件。P4 的 `logistic_price/` 只通过 import 使用，没有复制或修改。
 
+## 11-21 更新：P4 工件核对通过；报告素材
+
+* **P4 的最终工件核对通过。** 运行的命令是 `python -m src.price_lr.final_check --reference <P4 工件目录>`，结果在 `results/price_lr/stage3/final_artifact_check.json`，说明在 `selfcheck/Stage3.md` 偏离第 1 条。
+  * `training.json` 和本机的逐字节相同；
+  * scaler 的三个数组完全相同；
+  * `lr.coef_` 最大差 1.5e-14，`lr.intercept_` 最大差 4.1e-15，都在 1e-12 以内，但不是逐位相同；
+  * 2026-10-18 … 10-31 共 672 个半小时的类别完全相同。
+  * 两边的 SHA 不同，只是因为系数末几位的浮点差异。提交用 P4 的工件（SHA `7e898b2a…`）。
+* **报告素材：** `python -m src.price_lr.report_assets` 从已有结果文件生成 Results 4.3/4.4 价格部分的表格和图，输出到 `results/price_lr/report/`。
+  * 表格只有数字，caption 留空；数字不手抄，`manifest.json` 记录了每个单元格的出处。
+  * 4.4 用的是合并表 `tab_p5_strategies_stage3.tex`，同时保留 `tab:p5-strategies` 和 `tab:p5-stage3` 两个 label。
+  * `report/overleaf/` 是放进 Overleaf 的两个 section 骨架和图。
+  * `report/method/` 是给 Methodology 用的三阶段流程图和四模型汇总表，用不用由 P1 决定。
+  * `P5_facts.md` 是自动生成的事实清单。
+* 测试：`pytest tests/price_lr -q`，24 个，在 `src/` 同时包含 `price_lr` 和 `price_hgbc` 的工作区布局下运行（和 M7 一样）。
+
 ## 11-18 更新：Stage 3 决定
 
 **最终策略 S1**（扩展窗口），最终模型就是 P4 的 `fit_final(data, 2026-10-31)`，τ = 0.49，训练 293,760 行。决定过程见 [`results/price_lr/stage3/decision.md`](results/price_lr/stage3/decision.md)，自检见 [`results/price_lr/selfcheck/Stage3.md`](results/price_lr/selfcheck/Stage3.md)。

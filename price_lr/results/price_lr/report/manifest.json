@@ -1,0 +1,951 @@
+{
+ "generated_by": "python -m src.price_lr.report_assets",
+ "figure_width_in": 6.3,
+ "figure_sizes_in": {
+  "fig_p5_yearly_ba.pdf": [
+   6.3,
+   1.8
+  ],
+  "fig_p5_s0_monitor.pdf": [
+   6.3,
+   1.5
+  ],
+  "fig_p5_monthly_gap.pdf": [
+   6.3,
+   2.3
+  ],
+  "fig_p5_s3_cusum.pdf": [
+   6.3,
+   2.2
+  ]
+ },
+ "s3_markers": {
+  "suppressed": 81,
+  "retrained": 6
+ },
+ "cells": [
+  {
+   "table": "s0_alarms",
+   "text": "$+$4.36",
+   "source": "yearly_dev.csv",
+   "key": 2015,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$+$4.07",
+   "source": "yearly_dev.csv",
+   "key": 2016,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$+$5.52",
+   "source": "yearly_dev.csv",
+   "key": 2017,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$+$4.41",
+   "source": "yearly_dev.csv",
+   "key": 2018,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$+$4.70",
+   "source": "yearly_dev.csv",
+   "key": 2019,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$+$4.01",
+   "source": "yearly_dev.csv",
+   "key": 2020,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$+$1.88",
+   "source": "yearly_dev.csv",
+   "key": 2021,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$+$0.45",
+   "source": "yearly_dev.csv",
+   "key": 2022,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$-$1.88",
+   "source": "yearly_dev.csv",
+   "key": 2023,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$-$3.06",
+   "source": "yearly_dev.csv",
+   "key": 2024,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$-$9.88",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2025,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "text": "$-$0.49",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2026,
+   "column": "S0_BalAcc-b1_BalAcc",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "s0_alarms",
+   "kind": "alarm_counts",
+   "source": "stage3/s0_monitor_alarms_by_year_2015_2026.csv",
+   "values": {
+    "2015": 0,
+    "2016": 15,
+    "2017": 14,
+    "2018": 8,
+    "2019": 15,
+    "2020": 6,
+    "2021": 23,
+    "2022": 51,
+    "2023": 39,
+    "2024": 47,
+    "2025": 64,
+    "2026": 26
+   }
+  },
+  {
+   "table": "strategies",
+   "text": "75.64",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S0",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "75.09",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S0",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "$+$2.42",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S0",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "$+$1.09",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S1-S0",
+   "column": "diff_pp",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "$+$0.85",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S1-S0",
+   "column": "diff_lo",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "$+$1.32",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S1-S0",
+   "column": "diff_hi",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "76.12",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S1",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "76.17",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S1",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "$+$3.51",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S1",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "$+$1.22",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S2-S0",
+   "column": "diff_pp",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "$+$0.95",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S2-S0",
+   "column": "diff_lo",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "$+$1.49",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S2-S0",
+   "column": "diff_hi",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "76.05",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S2",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "76.30",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S2",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "$+$3.64",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S2",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "$+$0.88",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S3-S0",
+   "column": "diff_pp",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "$+$0.68",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S3-S0",
+   "column": "diff_lo",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "$+$1.05",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S3-S0",
+   "column": "diff_hi",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "75.84",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S3",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "75.97",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S3",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "$+$3.30",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S3",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "text": "73.23",
+   "source": "strategy_comparison_dev.csv",
+   "key": "b1",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "72.67",
+   "source": "strategy_comparison_dev.csv",
+   "key": "b1",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "70.39",
+   "source": "strategy_comparison_dev.csv",
+   "key": "b7",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "69.89",
+   "source": "strategy_comparison_dev.csv",
+   "key": "b7",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies",
+   "text": "$-$2.77",
+   "source": "strategy_comparison_dev.csv",
+   "key": "b7",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies",
+   "kind": "retrains",
+   "source": "strategy_comparison_dev.csv",
+   "values": {
+    "S0": 0,
+    "S1": 4,
+    "S2": 4,
+    "S3": 6
+   }
+  },
+  {
+   "table": "stage3",
+   "text": "70.86",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S0",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "71.01",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S0",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "69.55",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2025,
+   "column": "S0_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "73.38",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2026,
+   "column": "S0_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "$-$5.97",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S0",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "stage3",
+   "text": "79.97",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S1",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "79.90",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S1",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "81.97",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2025,
+   "column": "S1_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "77.48",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2026,
+   "column": "S1_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "$+$2.93",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S1",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "stage3",
+   "text": "80.69",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S2",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "80.71",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S2",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "83.00",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2025,
+   "column": "S2_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "77.89",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2026,
+   "column": "S2_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "$+$3.74",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S2",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "stage3",
+   "text": "74.59",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S3",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "74.72",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S3",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "74.81",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2025,
+   "column": "S3_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "74.95",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2026,
+   "column": "S3_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "$-$2.25",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S3",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "stage3",
+   "text": "76.96",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "b1",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "76.97",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "b1",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "79.42",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2025,
+   "column": "b1_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "73.87",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2026,
+   "column": "b1_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "73.07",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "b7",
+   "column": "Acc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "73.03",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "b7",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "75.40",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2025,
+   "column": "b7_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "70.20",
+   "source": "stage3/holdout_2025_2026_yearly.csv",
+   "key": 2026,
+   "column": "b7_BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "stage3",
+   "text": "$-$3.94",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "b7",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "75.09",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S0",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$2.42",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S0",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "71.01",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S0",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$-$5.97",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S0",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$1.09",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S1-S0",
+   "column": "diff_pp",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$0.85",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S1-S0",
+   "column": "diff_lo",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$1.32",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S1-S0",
+   "column": "diff_hi",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "76.17",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S1",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$3.51",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S1",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "79.90",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S1",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$2.93",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S1",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$1.22",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S2-S0",
+   "column": "diff_pp",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$0.95",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S2-S0",
+   "column": "diff_lo",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$1.49",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S2-S0",
+   "column": "diff_hi",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "76.30",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S2",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$3.64",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S2",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "80.71",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S2",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$3.74",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S2",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$0.88",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S3-S0",
+   "column": "diff_pp",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$0.68",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S3-S0",
+   "column": "diff_lo",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$1.05",
+   "source": "paired_bootstrap_dev.csv",
+   "key": "S3-S0",
+   "column": "diff_hi",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "75.97",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S3",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$+$3.30",
+   "source": "strategy_comparison_dev.csv",
+   "key": "S3",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "74.72",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S3",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$-$2.25",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "S3",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "72.67",
+   "source": "strategy_comparison_dev.csv",
+   "key": "b1",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "76.97",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "b1",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "69.89",
+   "source": "strategy_comparison_dev.csv",
+   "key": "b7",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$-$2.77",
+   "source": "strategy_comparison_dev.csv",
+   "key": "b7",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "73.03",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "b7",
+   "column": "BalAcc",
+   "dp": 2,
+   "sign": false
+  },
+  {
+   "table": "strategies_stage3",
+   "text": "$-$3.94",
+   "source": "stage3/holdout_2025_2026_comparison.csv",
+   "key": "b7",
+   "column": "BalAcc_minus_b1",
+   "dp": 2,
+   "sign": true
+  },
+  {
+   "table": "strategies_stage3",
+   "kind": "retrains",
+   "source": "strategy_comparison_dev.csv",
+   "values": {
+    "S0": 0,
+    "S1": 4,
+    "S2": 4,
+    "S3": 6
+   }
+  }
+ ]
+}
